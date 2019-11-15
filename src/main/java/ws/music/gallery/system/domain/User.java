@@ -1,6 +1,9 @@
 package ws.music.gallery.system.domain;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import ws.music.gallery.system.enums.Gender;
 
@@ -9,6 +12,9 @@ import javax.persistence.*;
 @Entity
 @Table(name = "USER", schema = "MUSIC_GALLERY_INDOOR")
 @Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
 
     @Id
@@ -23,6 +29,9 @@ public class User {
     private String password;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "GENDER", nullable = false)
+    @Column(name = "GENDER")
     private Gender gender;
+
+    @Column(name = "AGE")
+    private int age;
 }

@@ -1,25 +1,19 @@
 package ws.music.gallery.system.domain.dto;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ws.music.gallery.system.enums.Gender;
+
+import java.time.LocalDate;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDTO {
-    
-    private Long idUser;
+public class VynlDTO extends ProductDTO {
 
-    private String cpfUser;
-
-    private String password;
-
-    private Gender gender;
-
-    private int age;
+    private String musicalGenre; //TODO Enum?
+    private LocalDate releaseYear;
+    private String band;
 }
