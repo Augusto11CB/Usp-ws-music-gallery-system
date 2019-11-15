@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import ws.music.gallery.system.enums.ClothSize;
+import ws.music.gallery.system.enums.Gender;
 
 @Data
 @Builder
@@ -11,8 +13,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class TShirtDTO extends ProductDTO{
 
-    private String size; // TODO Enum?
-    private String designatedGender; // TODO Enum?
+    private ClothSize size;
+    private Gender designatedGender;
     private String mainColor;
     private String typeOfFiber;
 

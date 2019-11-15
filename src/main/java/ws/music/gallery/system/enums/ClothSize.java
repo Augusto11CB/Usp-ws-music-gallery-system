@@ -1,13 +1,14 @@
 package ws.music.gallery.system.enums;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 
 @AllArgsConstructor
-public enum Gender {
+public enum ClothSize {
 
-    FEMALE("MULHER"),
-    MALE("HOMEM");
+    P("PEQUENO"),
+    M("MÉDIO"),
+    G("GRANDE"),
+    XG("EXTRA GRANDE");
 
     private String value;
 }
