@@ -1,0 +1,609 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#"
+     xml:base="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ontology="http://wiki.dbpedia.org/services-resources/ontology#">
+    <owl:Ontology rdf:about="http://wiki.dbpedia.org/services-resources/ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#compradoPorCliente -->
+
+    <owl:ObjectProperty rdf:about="http://wiki.dbpedia.org/services-resources/ontology#compradoPorCliente">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wiki.dbpedia.org/services-resources/ontology#compradoPorCliente"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Produto"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wiki.dbpedia.org/services-resources/ontology#compradoPorCliente"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Cliente"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#vendidoPelaLoja -->
+
+    <owl:ObjectProperty rdf:about="http://wiki.dbpedia.org/services-resources/ontology#vendidoPelaLoja">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wiki.dbpedia.org/services-resources/ontology#vendidoPelaLoja"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Produto"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://wiki.dbpedia.org/services-resources/ontology#vendidoPelaLoja"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Loja"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#anoDeLancamento -->
+
+    <owl:DatatypeProperty rdf:about="http://wiki.dbpedia.org/services-resources/ontology#anoDeLancamento">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Vinil"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#banda -->
+
+    <owl:DatatypeProperty rdf:about="http://wiki.dbpedia.org/services-resources/ontology#banda">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#CamisetaBanda"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Vinil"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#corPrincipal -->
+
+    <owl:DatatypeProperty rdf:about="http://wiki.dbpedia.org/services-resources/ontology#corPrincipal">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Camiseta"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#eUsado -->
+
+    <owl:DatatypeProperty rdf:about="http://wiki.dbpedia.org/services-resources/ontology#eUsado">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#InstrumentoMusical"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#entradasUSB -->
+
+    <owl:DatatypeProperty rdf:about="http://wiki.dbpedia.org/services-resources/ontology#entradasUSB">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Vitrola"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#estoqueDisponivel -->
+
+    <owl:DatatypeProperty rdf:about="http://wiki.dbpedia.org/services-resources/ontology#estoqueDisponivel">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Produto"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#generoDestinado -->
+
+    <owl:DatatypeProperty rdf:about="http://wiki.dbpedia.org/services-resources/ontology#generoDestinado">
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#generoDoCliente"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Camiseta"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#generoMusical -->
+
+    <owl:DatatypeProperty rdf:about="http://wiki.dbpedia.org/services-resources/ontology#generoMusical">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#CamisetaBanda"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Vinil"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#idade -->
+
+    <owl:DatatypeProperty rdf:about="http://wiki.dbpedia.org/services-resources/ontology#idade">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Cliente"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#marca -->
+
+    <owl:DatatypeProperty rdf:about="http://wiki.dbpedia.org/services-resources/ontology#marca">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Camiseta"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#InstrumentoMusical"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Vitrola"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#tamanho -->
+
+    <owl:DatatypeProperty rdf:about="http://wiki.dbpedia.org/services-resources/ontology#tamanho">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Camiseta"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#tecido -->
+
+    <owl:DatatypeProperty rdf:about="http://wiki.dbpedia.org/services-resources/ontology#tecido">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Camiseta"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#tipoDeInstrumento -->
+
+    <owl:DatatypeProperty rdf:about="http://wiki.dbpedia.org/services-resources/ontology#tipoDeInstrumento">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#InstrumentoMusical"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#tipoProduto -->
+
+    <owl:DatatypeProperty rdf:about="http://wiki.dbpedia.org/services-resources/ontology#tipoProduto">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Produto"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#tocaRadio -->
+
+    <owl:DatatypeProperty rdf:about="http://wiki.dbpedia.org/services-resources/ontology#tocaRadio">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Vitrola"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#voltagem -->
+
+    <owl:DatatypeProperty rdf:about="http://wiki.dbpedia.org/services-resources/ontology#voltagem">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Vitrola"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#estoqueDisponivel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#estoqueDisponivel">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Produto"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#generoDoCliente -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#generoDoCliente">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Cliente"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#nome -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#nome">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Cliente"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Loja"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Produto"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#preco -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#preco">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Produto"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#tipoAtividadeDaLoja -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#tipoAtividadeDaLoja">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Loja"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Camiseta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Camiseta">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Produto"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#CamisetaBanda -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#CamisetaBanda">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Camiseta"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Cliente -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Cliente"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#InstrumentoMusical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#InstrumentoMusical">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Produto"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Loja -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Loja"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Produto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Produto"/>
+    
+
+
+    <!-- http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Vinil -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Vinil">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Produto"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Vitrola -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Vitrola">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Produto"/>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/spec/#term_Agent -->
+
+    <owl:Class rdf:about="http://xmlns.com/foaf/spec/#term_Agent"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#All_Rock_T-shirts -->
+
+    <owl:NamedIndividual rdf:about="http://wiki.dbpedia.org/services-resources/ontology#All_Rock_T-shirts">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Loja"/>
+        <nome>All Rock T-shirts</nome>
+        <tipoAtividadeDaLoja>Lojas de vestuário (Moda e Estilo)</tipoAtividadeDaLoja>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#Augusto -->
+
+    <owl:NamedIndividual rdf:about="http://wiki.dbpedia.org/services-resources/ontology#Augusto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Cliente"/>
+        <ontology:idade rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">22</ontology:idade>
+        <generoDoCliente>M</generoDoCliente>
+        <nome>Augusto Calado Bueno</nome>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#Camiseta_Bee_Gees -->
+
+    <owl:NamedIndividual rdf:about="http://wiki.dbpedia.org/services-resources/ontology#Camiseta_Bee_Gees">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#CamisetaBanda"/>
+        <ontology:compradoPorCliente rdf:resource="http://wiki.dbpedia.org/services-resources/ontology#Augusto"/>
+        <ontology:vendidoPelaLoja rdf:resource="http://wiki.dbpedia.org/services-resources/ontology#All_Rock_T-shirts"/>
+        <ontology:banda rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bee Gees</ontology:banda>
+        <ontology:corPrincipal rdf:datatype="http://www.w3.org/2001/XMLSchema#string">branca</ontology:corPrincipal>
+        <ontology:generoMusical rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pop Rock</ontology:generoMusical>
+        <ontology:marca rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Levis</ontology:marca>
+        <ontology:tecido rdf:datatype="http://www.w3.org/2001/XMLSchema#string">algodão</ontology:tecido>
+        <ontology:tipoProduto>Peça de vestuário</ontology:tipoProduto>
+        <ontology:tipoProduto rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vestuário</ontology:tipoProduto>
+        <estoqueDisponivel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">19</estoqueDisponivel>
+        <nome>Camiseta do Bee Gees</nome>
+        <preco rdf:datatype="http://www.w3.org/2001/XMLSchema#double">355.0</preco>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#GuitarraEletrica -->
+
+    <owl:NamedIndividual rdf:about="http://wiki.dbpedia.org/services-resources/ontology#GuitarraEletrica">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#InstrumentoMusical"/>
+        <ontology:vendidoPelaLoja rdf:resource="http://wiki.dbpedia.org/services-resources/ontology#Pierre_Instrumentos_musicais"/>
+        <ontology:eUsado rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</ontology:eUsado>
+        <ontology:estoqueDisponivel rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</ontology:estoqueDisponivel>
+        <ontology:marca rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jackson</ontology:marca>
+        <ontology:tipoDeInstrumento rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corda</ontology:tipoDeInstrumento>
+        <ontology:tipoProduto rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Item Musical</ontology:tipoProduto>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guitarra do Bob Marley</nome>
+        <preco rdf:datatype="http://www.w3.org/2001/XMLSchema#double">2000.0</preco>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#Kiss_Love_Gun_1997 -->
+
+    <owl:NamedIndividual rdf:about="http://wiki.dbpedia.org/services-resources/ontology#Kiss_Love_Gun_1997">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Vinil"/>
+        <ontology:vendidoPelaLoja rdf:resource="http://wiki.dbpedia.org/services-resources/ontology#Rock_Planet"/>
+        <ontology:anoDeLancamento rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1977</ontology:anoDeLancamento>
+        <ontology:banda rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kiss</ontology:banda>
+        <ontology:estoqueDisponivel rdf:datatype="http://www.w3.org/2001/XMLSchema#int">4</ontology:estoqueDisponivel>
+        <ontology:tipoProduto rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Item Musical</ontology:tipoProduto>
+        <nome>Lp - Kiss - Love Gun 1977 - Disco De Vinil</nome>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#Pierre_Instrumentos_musicais -->
+
+    <owl:NamedIndividual rdf:about="http://wiki.dbpedia.org/services-resources/ontology#Pierre_Instrumentos_musicais">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Loja"/>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pierre Instrumentos musicais</nome>
+        <tipoAtividadeDaLoja rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loja de artigos musicais (Instrumentos Musicais)</tipoAtividadeDaLoja>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#Rock_Planet -->
+
+    <owl:NamedIndividual rdf:about="http://wiki.dbpedia.org/services-resources/ontology#Rock_Planet">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Loja"/>
+        <nome>Rock and Roll Planet</nome>
+        <tipoAtividadeDaLoja>Loja de mídias musicais (Vitrolas e Discos de Vinil)</tipoAtividadeDaLoja>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#Vitrola_Phillips -->
+
+    <owl:NamedIndividual rdf:about="http://wiki.dbpedia.org/services-resources/ontology#Vitrola_Phillips">
+        <ontology:vendidoPelaLoja rdf:resource="http://wiki.dbpedia.org/services-resources/ontology#Rock_Planet"/>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Raveo Sonetto Preto</nome>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://wiki.dbpedia.org/services-resources/ontology#Vitrola_Raveo_Sonetto -->
+
+    <owl:NamedIndividual rdf:about="http://wiki.dbpedia.org/services-resources/ontology#Vitrola_Raveo_Sonetto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/asusaugusto/ontologies/2019/9/untitled-ontology-3#Vitrola"/>
+        <ontology:vendidoPelaLoja rdf:resource="http://wiki.dbpedia.org/services-resources/ontology#Rock_Planet"/>
+        <ontology:entradasUSB rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ontology:entradasUSB>
+        <ontology:estoqueDisponivel rdf:datatype="http://www.w3.org/2001/XMLSchema#int">60</ontology:estoqueDisponivel>
+        <ontology:generoDestinado rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M</ontology:generoDestinado>
+        <ontology:marca rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TopLine Raveo Sonetto</ontology:marca>
+        <ontology:tipoProduto rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Item Musical</ontology:tipoProduto>
+        <ontology:tocaRadio rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ontology:tocaRadio>
+        <ontology:voltagem rdf:datatype="http://www.w3.org/2001/XMLSchema#int">110</ontology:voltagem>
+        <nome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">TopLine Raveo Sonetto</nome>
+        <preco rdf:datatype="http://www.w3.org/2001/XMLSchema#double">400.0</preco>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
