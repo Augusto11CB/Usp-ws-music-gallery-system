@@ -147,4 +147,22 @@ ModelMaker mm = ModelFactory.createRDBModelMaker(conn);
 * Open an existing model `Model model = mm.openModel("MusicGallery");`
 * Verify if there is a model `if(mm.hasModel("MusicGallery")){...}`
 
+### Reasoner
 
+**Inference in a SemanticWeb context** can be interpreted as the act of adding new triple to the model.
+
+Reasoner are divided in two categories: 
+
+#### InfModel
+Infmodel has an API to make basic inference
+
+```java
+Model model = mm.createModel("MusicGallery");
+InfModel inferredModel = ModelFactory.createRDFSModel(model);
+```
+
+#### Reasoner
+
+```java
+
+```
