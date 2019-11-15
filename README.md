@@ -1,11 +1,11 @@
 # Usp-ws-music-gallery-system
 
 ## Jena Java API
-
+Jena is a free and open source Java framework for building Semantic Web and Linked Data applications. Site []
 
 * Model: It is a Graph
 
-### 
+### Basic Commands and Declarations
 
 * Model Declaration
 >```java
@@ -30,3 +30,31 @@
 >```java
 > store.addProperty(nameProperty, "Rock and Roll Planet");
 >```
+
+* Create a literal
+>```java
+> String type = " "http://www.w3.org/2001/XMLSchema#int"
+> Model model = ModelFactory.createDefaultModel();
+> Literal storeStock = model.createTypeLiteral("42",type); 
+>```
+
+>```java
+> RRDFDatatype type = XSDDatatype.XSDint;
+> Model model = ModelFactory.createDefaultModel();
+> Literal storeStock = model.createTypeLiteral("42",type); 
+>```
+
+### Making Assertions 
+
+* *<subject, predicate, object>* are called declaration
+>```java
+> String STORE_URI = "http://musicgallery/stores/rock-roll-planet"
+> Model model = ModelFactory.createDefaultModel();
+> Resource store = model.createResource(STORE_URI);
+> Property nameProperty = model.createResource(STORE_URI + "name");
+> Literal b = model.createLiteral("Rock-And-Roll-Planet");
+> Statement stmt = model.createStatement(store,nameProperty,b)
+>```
+
+* Adding declaration in to de *Model*
+     `` model.add(stm) ``
