@@ -10,6 +10,8 @@ public interface StoreService {
 
     List<StoreDTO> getAllStores();
 
+    List<StoreDTO> getStore(String storeName);
+
     List<StoreDTO> getAllStoresOrderByName();
 
     List<StoreDTO> getStoresByBusinessType(TypeProductAndBusiness type);
