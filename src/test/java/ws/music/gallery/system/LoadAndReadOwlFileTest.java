@@ -9,6 +9,7 @@ import org.apache.jena.util.iterator.ExtendedIterator;
 import org.apache.log4j.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -25,6 +26,10 @@ public class LoadAndReadOwlFileTest {
 
     @Value("${music.gallery.uri}")
     private String MUSIC_GALLERY_URI;
+
+    @Autowired
+    private OntModel musicGalleryOntologyModel;
+
 
     Gson gson;
 
@@ -57,6 +62,22 @@ public class LoadAndReadOwlFileTest {
         InputStream in = new FileInputStream(file);
         ontoModel.read(in, null);
         getAllResourceOf(store);
+    }
+
+    @Test
+    void readingOwlFileByBeanDefinition() throws FileNotFoundException {
+        getAllProductsUsingBeanOntology(store);
+    }
+
+
+    private void getAllProductsUsingBeanOntology(Resource resource) {
+        ExtendedIterator<Individual> iterator = musicGalleryOntologyModel.listIndividuals(resource);
+        iterator.forEachRemaining(statement -> System.out.println(statement));
+
+        while (iterator.hasNext()) {
+            Individual Individual = iterator.next();
+            System.out.println(Individual);
+        }
     }
 
     private void getAllProducts(OntModel ontoModel) {
