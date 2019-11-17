@@ -28,7 +28,7 @@ public class OntModelLoaderConfig {
 
 
 
-    @Bean
+    @Bean(name = "musicGalleryOntologyModel")
     public OntModel loadOntologyModel() {
         OntModel ontoModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM, null);
         try {
