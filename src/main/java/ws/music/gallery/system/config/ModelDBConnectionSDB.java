@@ -17,6 +17,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+
 //Caused by: java.lang.ClassNotFoundException: org.apache.derby.jdbc.EmbeddedDriver
 
 @Configuration
@@ -51,20 +54,27 @@ public class ModelDBConnectionSDB {
     public OntModel loadOntologyModel() {
         OntModel ontModel = null;
 
-        StoreDesc storeDesc = new StoreDesc(LayoutType.LayoutTripleNodesHash,
-                DatabaseType.MySQL);
-        JDBC.loadDriverDerby();
-        String jdbcURL = "jdbc:h2:file:~/h2/music_gallery_db";
-        SDBConnection conn = new SDBConnection(jdbcURL, "admin", null);
-        Store store = SDBFactory.connectStore(conn, storeDesc);
+        try {
+            //Class.forName("org.apache.derby.jdbc.EmbeddedDriver").newInstance();
 
-        Model model = SDBFactory.connectDefaultModel(store);
+            //Class.forName("org.h2.Driver");
+            StoreDesc storeDesc = new StoreDesc(LayoutType.LayoutTripleNodesHash,
+                    DatabaseType.Derby);
+            JDBC.loadDriverDerby();
+            String jdbcURL = "jdbc:derby:music_gallery_db;create=true;user=admin;password=";
+            //SDBConnection conn = new SDBConnection(jdbcURL, "admin", "");
+            Connection conn = DriverManager.getConnection(jdbcURL);
+            Store store = SDBFactory.connectStore(conn, storeDesc);
 
-        ontModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM_RULE_INF, model);
+            Model model = SDBFactory.connectDefaultModel(store);
 
+            ontModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM_RULE_INF, model);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return ontModel;
     }
 
 }
 
- */
+*/

@@ -57,7 +57,7 @@ public class ModelDBConnection {
         try {
 
             Class.forName("org.h2.Driver");
-            conn = new DBConnection("jdbc:h2:file:~/h2/music_gallery_db", "admin", "", "MySQL");
+            conn = new DBConnection("jdbc:h2:file:~/h2/music_gallery_db;MODE=MySQL;DATABASE_TO_LOWER=TRUE", "admin", "", "MySQL");
 //            conn = new DBConnection(DB_URL, DB_USER, DB_PASSWD, DB_TYPE);
             maker = ModelFactory.createModelRDBMaker(conn);
 
@@ -86,4 +86,5 @@ public class ModelDBConnection {
         return ontModel;
     }
 }
+
 */
