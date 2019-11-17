@@ -13,6 +13,6 @@ import java.time.LocalDate;
 public class VynlDTO extends ProductDTO {
 
     private String musicalGenre; //TODO Enum?
-    private LocalDate releaseYear;
+    private int releaseYear;
     private String band;
 }
