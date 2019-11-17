@@ -36,10 +36,12 @@ public class LoadAndReadOwlFileTest {
     private OntModel ontoModel;
 
     private Property typeBusiness;
+    private Property typeIs;
     private Property boughtByUser;
     private Resource store;
     private Resource product;
     private Resource augustoUser;
+    private Resource clothing;
     private Literal cpf;
 
 
@@ -49,11 +51,13 @@ public class LoadAndReadOwlFileTest {
         ontoModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM, null);
 
         typeBusiness = ontoModel.createProperty(MUSIC_GALLERY_URI + "typeBusiness");
+        typeIs = ontoModel.createProperty(MUSIC_GALLERY_URI + "typeIs");
         boughtByUser = ontoModel.createProperty(MUSIC_GALLERY_URI + "boughtByUser");
 
         store = ontoModel.createResource(MUSIC_GALLERY_URI + "Store");
         product = ontoModel.createResource(MUSIC_GALLERY_URI + "Product");
         augustoUser = ontoModel.createResource(MUSIC_GALLERY_URI + "Augusto");
+        clothing = ontoModel.createResource(MUSIC_GALLERY_URI + "Clothing");
     }
 
     @Test
@@ -66,7 +70,7 @@ public class LoadAndReadOwlFileTest {
 
     @Test
     void readingOwlFileByBeanDefinition() throws FileNotFoundException {
-        getAllProductsUsingBeanOntology(store);
+        getAllStoresByType();
     }
 
 
@@ -80,8 +84,9 @@ public class LoadAndReadOwlFileTest {
         }
     }
 
-    private void getAllProducts(OntModel ontoModel) {
-
+    private void getAllStoresByType() {
+        ResIterator iterator = musicGalleryOntologyModel.listResourcesWithProperty(typeBusiness, clothing);
+        iterator.forEachRemaining(System.out::println);
     }
 
 
