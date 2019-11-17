@@ -3,15 +3,12 @@ package ws.music.gallery.system.repository.impl;
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.Property;
-import org.apache.jena.rdf.model.ResIterator;
 import org.apache.jena.rdf.model.Resource;
-import org.apache.jena.util.iterator.ExtendedIterator;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import ws.music.gallery.system.converter.StoreOntologyEntitiesConverter;
 import ws.music.gallery.system.repository.StoreOntologyRepository;
 
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
@@ -24,36 +21,46 @@ public class StoreOntologyRepositoryImpl implements StoreOntologyRepository {
 
     private OntModel musicGalleryOntologyModel;
 
+    private MusicGalleryOntologyRepositoryImpl musicGalleryOntologyRepository;
+
     private StoreOntologyEntitiesConverter individualAndDTOStoreConverter;
 
     private final Resource storeResourceDef;
 
-    private final Property typeBusiness;
+    private final Property typeBusinessProp;
 
     public StoreOntologyRepositoryImpl(OntModel musicGalleryOntologyModel, StoreOntologyEntitiesConverter individualAndDTOStoreConverter) {
 
         this.musicGalleryOntologyModel = musicGalleryOntologyModel;
         this.individualAndDTOStoreConverter = individualAndDTOStoreConverter;
         this.storeResourceDef = musicGalleryOntologyModel.createResource(MUSIC_GALLERY_URI + "Store");
-        this.typeBusiness = musicGalleryOntologyModel.createProperty(MUSIC_GALLERY_URI + "typeBusiness");
+        this.typeBusinessProp = musicGalleryOntologyModel.createProperty(MUSIC_GALLERY_URI + "typeBusiness");
+    }
+
+    @Override
+    public Resource getStore(String storeName) {
+        //TODO implement getStore
+        return null;
     }
 
     @Override
     public List<Individual> getAllStores() {
-        List<Individual> storeIndvList = Collections.emptyList();
-        ExtendedIterator<Individual> iterator = musicGalleryOntologyModel.listIndividuals(storeResourceDef);
+//        List<Individual> storeIndvList = Collections.emptyList();
+//        ExtendedIterator<Individual> iterator = musicGalleryOntologyModel.listIndividuals(storeResourceDef);
+//
+//        iterator.forEachRemaining(individual ->
+//                storeIndvList.add(individual));
+//
+//        this.printIteratorItens(iterator);
+//
+//        return storeIndvList;
 
-        iterator.forEachRemaining(individual ->
-                storeIndvList.add(individual));
+        return musicGalleryOntologyRepository.getAllResources(storeResourceDef);
 
-        this.printIteratorItens(iterator);
-
-        return storeIndvList;
     }
 
     @Override
     public List<Individual> getAllStoresOrderByName() {
-
 
         List<Individual> storeIndvList = this.getAllStores();
         storeIndvList.sort(Comparator.comparing(Individual::getLocalName)); //TODO verify format of getLocalName() return
@@ -64,12 +71,14 @@ public class StoreOntologyRepositoryImpl implements StoreOntologyRepository {
     }
 
     @Override
-    public List<Resource> getAllStoresByBusinessType(Property type) {
-        List<Resource> storeIndvList = Collections.emptyList();
+    public List<Resource> getAllStoresByBusinessType(Resource typeBusiness) {
+//        List<Resource> storeIndvList = Collections.emptyList();
+//
+//        ResIterator iterator = musicGalleryOntologyModel.listResourcesWithProperty(typeBusiness, type);
+//        iterator.forEachRemaining(indv -> storeIndvList.add(indv));
+//        return storeIndvList;
+        return musicGalleryOntologyRepository.getAllResourcesByProperty(typeBusinessProp, typeBusiness);
 
-        ResIterator iterator = musicGalleryOntologyModel.listResourcesWithProperty(typeBusiness, type);
-        iterator.forEachRemaining(indv -> storeIndvList.add(indv));
-        return storeIndvList;
     }
 
     private <T> void printIteratorItens(Iterator<T> ite) {

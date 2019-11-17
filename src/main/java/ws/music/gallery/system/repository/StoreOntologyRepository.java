@@ -1,16 +1,17 @@
 package ws.music.gallery.system.repository;
 
 import org.apache.jena.ontology.Individual;
-import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 
 import java.util.List;
 
 public interface StoreOntologyRepository {
 
-    public List<Individual> getAllStores();
+    Resource getStore(String storeName);
 
-    public List<Individual> getAllStoresOrderByName();
+    List<Individual> getAllStores();
 
-    public List<Resource> getAllStoresByBusinessType(Property type);
+    List<Individual> getAllStoresOrderByName();
+
+    List<Resource> getAllStoresByBusinessType(Resource type);
 }
