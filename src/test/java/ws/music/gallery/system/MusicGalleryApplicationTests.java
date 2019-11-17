@@ -8,8 +8,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.ResourceUtils;
+import ws.music.gallery.system.repository.MusicGalleryOntologyRepository;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -25,6 +28,15 @@ class MusicGalleryApplicationTests {
 
     private static final Logger LOGGER = Logger.getLogger(MusicGalleryApplicationTests.class);
 
+    @Value("${music.gallery.uri}")
+    private String MUSIC_GALLERY_URI;
+
+    @Autowired
+    private MusicGalleryOntologyRepository musicGalleryOntologyRepository;
+
+    @Autowired
+    private OntModel musicGalleryOntologyModel;
+
     private Model model;
     private Resource resource;
     private Property property;
@@ -37,8 +49,14 @@ class MusicGalleryApplicationTests {
         Property nameProperty = model.createProperty("Rock-And-Roll-Planet");
         Statement statement = null;
         RDFNode rdfNode;
+        resource = musicGalleryOntologyModel.createResource(MUSIC_GALLERY_URI + "Product");
 
 
+    }
+
+    @Test
+    void MusicGalleryRepositoryTest() {
+        musicGalleryOntologyRepository.getAllResources(resource);
     }
 
     @Test
@@ -66,15 +84,15 @@ class MusicGalleryApplicationTests {
 
     }
 
-    private void iterateThrough(OntModel ontoModel){
+    private void iterateThrough(OntModel ontoModel) {
         Iterator<Resource> iterator = ontoModel.listSubjects();
-        while(iterator.hasNext()) {
+        while (iterator.hasNext()) {
 
             Resource resource = iterator.next();
             System.out.println("Resource: " + resource);
 
             Iterator<Statement> iteratorResource = resource.listProperties();
-            while(iteratorResource.hasNext()) {
+            while (iteratorResource.hasNext()) {
                 Statement statement = iteratorResource.next();
                 System.out.println("Print1" + statement.getPredicate().getLocalName());
                 System.out.println("Print2" + statement.getSubject().getLocalName());

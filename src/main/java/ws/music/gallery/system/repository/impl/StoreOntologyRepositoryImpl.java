@@ -39,7 +39,8 @@ public class StoreOntologyRepositoryImpl implements StoreOntologyRepository {
 
     @Override
     public Resource getStore(String storeName) {
-        //TODO implement getStore
+
+
         return null;
     }
 
