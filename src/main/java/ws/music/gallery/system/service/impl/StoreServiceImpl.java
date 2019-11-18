@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import ws.music.gallery.system.converter.StoreOntologyEntitiesConverter;
 import ws.music.gallery.system.domain.dto.StoreDTO;
 import ws.music.gallery.system.enums.TypeProductAndBusiness;
-import ws.music.gallery.system.repository.StoreOntologyRepository;
+import ws.music.gallery.system.repository.ontologyrepo.StoreOntologyRepository;
 import ws.music.gallery.system.service.StoreService;
 import ws.music.gallery.system.utils.OntologyResourcesAndPropertiesUtil;
 
