@@ -1,5 +1,6 @@
 package ws.music.gallery.system;
 
+import com.google.gson.Gson;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.rdf.model.*;
@@ -12,13 +13,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.util.ResourceUtils;
-import ws.music.gallery.system.repository.MusicGalleryOntologyRepository;
+import ws.music.gallery.system.domain.dto.BandTShirtDTO;
+import ws.music.gallery.system.domain.dto.ProductDTO;
+import ws.music.gallery.system.domain.dto.RecordPlayerDTO;
+import ws.music.gallery.system.domain.dto.StoreDTO;
+import ws.music.gallery.system.enums.ClothSize;
+import ws.music.gallery.system.enums.Gender;
+import ws.music.gallery.system.enums.TypeProductAndBusiness;
+import ws.music.gallery.system.repository.ontologyrepo.MusicGalleryOntologyRepository;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Objects;
 
@@ -129,6 +139,49 @@ class MusicGalleryApplicationTests {
         resource = model.createResource(storeURI);
 
         System.out.println(resource);
+
+    }
+
+    @Test
+    public void testGetProducts() {
+        Gson gson = new Gson();
+        StoreDTO pierreInstrumentosMusicais = StoreDTO.builder()
+                .name("All Rock TShirts")
+                .typeBusiness(TypeProductAndBusiness.CLOTHING)
+                .build();
+
+        StoreDTO allRockTshirts = StoreDTO.builder()
+                .name("Pierre Instrumentos Musicais")
+                .typeBusiness(TypeProductAndBusiness.CLOTHING)
+                .build();
+
+        BandTShirtDTO bandTShirtDTO = BandTShirtDTO.builder()
+                .band("Scorpions")
+                .musicalGenre("rock")
+                .size(ClothSize.P)
+                .designatedGender(Gender.MALE)
+                .mainColor("white")
+                .typeOfFiber("Jeans")
+                .name("Tshirt scorpinos nice")
+                .typeProductAndBusiness(TypeProductAndBusiness.CLOTHING)
+                .branch("scorpions")
+                .price(120)
+                .soldByStore(pierreInstrumentosMusicais)
+                .build();
+
+        RecordPlayerDTO recordPlayerDTO = RecordPlayerDTO.builder()
+                .hasRadio(true)
+                .hasRadio(false)
+                .voltage(120)
+                .typeProductAndBusiness(TypeProductAndBusiness.MUSICAL_EQUIPMENT)
+                .branch("Phillips")
+                .price(601)
+                .soldByStore(allRockTshirts)
+                .build();
+
+        ArrayList<ProductDTO> products = new ArrayList<ProductDTO>(
+                Arrays.asList(bandTShirtDTO,recordPlayerDTO));
+        System.out.println(gson.toJson(products));
 
     }
 
