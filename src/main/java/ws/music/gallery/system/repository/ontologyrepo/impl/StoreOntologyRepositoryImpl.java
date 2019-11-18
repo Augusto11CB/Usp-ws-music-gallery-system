@@ -1,4 +1,4 @@
-package ws.music.gallery.system.repository.impl;
+package ws.music.gallery.system.repository.ontologyrepo.impl;
 
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.ontology.OntModel;
@@ -7,7 +7,8 @@ import org.apache.jena.rdf.model.Resource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import ws.music.gallery.system.converter.StoreOntologyEntitiesConverter;
-import ws.music.gallery.system.repository.StoreOntologyRepository;
+import ws.music.gallery.system.repository.ontologyrepo.MusicGalleryOntologyRepository;
+import ws.music.gallery.system.repository.ontologyrepo.StoreOntologyRepository;
 
 import java.util.Comparator;
 import java.util.Iterator;
@@ -21,7 +22,7 @@ public class StoreOntologyRepositoryImpl implements StoreOntologyRepository {
 
     private OntModel musicGalleryOntologyModel;
 
-    private MusicGalleryOntologyRepositoryImpl musicGalleryOntologyRepository;
+    private MusicGalleryOntologyRepository musicGalleryOntologyRepository;
 
     private StoreOntologyEntitiesConverter individualAndDTOStoreConverter;
 
@@ -29,8 +30,12 @@ public class StoreOntologyRepositoryImpl implements StoreOntologyRepository {
 
     private final Property typeBusinessProp;
 
-    public StoreOntologyRepositoryImpl(OntModel musicGalleryOntologyModel, StoreOntologyEntitiesConverter individualAndDTOStoreConverter) {
-
+    public StoreOntologyRepositoryImpl(
+            OntModel musicGalleryOntologyModel,
+            StoreOntologyEntitiesConverter individualAndDTOStoreConverter,
+            MusicGalleryOntologyRepository musicGalleryOntologyRepository
+    ) {
+        this.musicGalleryOntologyRepository = musicGalleryOntologyRepository;
         this.musicGalleryOntologyModel = musicGalleryOntologyModel;
         this.individualAndDTOStoreConverter = individualAndDTOStoreConverter;
         this.storeResourceDef = musicGalleryOntologyModel.createResource(MUSIC_GALLERY_URI + "Store");

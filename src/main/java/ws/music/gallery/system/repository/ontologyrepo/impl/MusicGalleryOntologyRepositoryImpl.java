@@ -1,4 +1,4 @@
-package ws.music.gallery.system.repository.impl;
+package ws.music.gallery.system.repository.ontologyrepo.impl;
 
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.ontology.OntModel;
@@ -9,12 +9,13 @@ import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.util.iterator.ExtendedIterator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import ws.music.gallery.system.repository.ontologyrepo.MusicGalleryOntologyRepository;
 
 import java.util.Collections;
 import java.util.List;
 
 @Repository
-public class MusicGalleryOntologyRepositoryImpl {
+public class MusicGalleryOntologyRepositoryImpl implements MusicGalleryOntologyRepository {
 
     @Autowired
     OntModel musicGalleryOntologyModel = null;
