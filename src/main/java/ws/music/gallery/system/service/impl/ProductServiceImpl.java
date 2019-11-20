@@ -2,9 +2,8 @@ package ws.music.gallery.system.service.impl;
 
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.rdf.model.Resource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import ws.music.gallery.system.converter.ProductOntologyEntitiesConverter;
+import ws.music.gallery.system.converter.*;
 import ws.music.gallery.system.domain.dto.ProductDTO;
 import ws.music.gallery.system.enums.TypeProductAndBusiness;
 import ws.music.gallery.system.repository.ontologyrepo.ProductOntologyRepository;
@@ -20,14 +19,25 @@ import java.util.stream.Collectors;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-    @Autowired
+
     private StoreOntologyRepository storeOntologyRepository;
 
-    @Autowired
+
     private ProductOntologyRepository productOntologyRepository;
 
-    @Autowired
+
     private ProductOntologyEntitiesConverter productConverter;
+
+
+    public ProductServiceImpl(
+            StoreOntologyRepository storeOntologyRepository,
+            ProductOntologyRepository productOntologyRepository
+    ) {
+        this.storeOntologyRepository = storeOntologyRepository;
+        this.productOntologyRepository = productOntologyRepository;
+        this.productConverter = this.buildChainOfConversion();
+    }
+
 
     @Override
     public List<ProductDTO> getAllProducts() {
@@ -66,5 +76,12 @@ public class ProductServiceImpl implements ProductService {
     public Map<TypeProductAndBusiness, List<ProductDTO>> getAllProductsByType() {
         //TODO implement getAllProductsByType
         return null;
+    }
+
+    private ProductOntologyEntitiesConverter buildChainOfConversion() {
+        return new TShirtOntologyEntitiesConverter()
+                .linkWith(new MusicalInstrumentOntologyEntitiesConverter()
+                        .linkWith(new RecordPlayerOntologyEntitiesConverter()
+                                .linkWith(new VynlOntologyEntitiesConverter())));
     }
 }

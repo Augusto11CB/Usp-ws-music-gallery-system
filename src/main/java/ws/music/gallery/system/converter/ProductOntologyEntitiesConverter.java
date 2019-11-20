@@ -1,40 +1,64 @@
 package ws.music.gallery.system.converter;
 
-/*
- *
- * TODO Create interface to define the convertion behavior
- *   Create inside this interface methods with generic parameters
- *
- * TODO For each entity that needs to implement this interface, the methods parameters will be adapted for attending their necessity
- * */
-
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.rdf.model.Resource;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Value;
 import ws.music.gallery.system.domain.dto.ProductDTO;
 
-@Component
-public class ProductOntologyEntitiesConverter {
+import java.util.Collections;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
 
-    public Individual productDTOToindividual(ProductDTO productDTO) {
-        //TODO
-        return null;
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public abstract class ProductOntologyEntitiesConverter implements OntologyEntitiesConverter {
+
+    @Value("${music.gallery.uri}")
+    protected String musicGalleryURI;
+
+
+    private ProductOntologyEntitiesConverter nextProductConverter;
+
+    public ProductOntologyEntitiesConverter linkWith(ProductOntologyEntitiesConverter next) {
+        this.nextProductConverter = next;
+        return nextProductConverter;
     }
 
-    public ProductDTO individualToProductDTO(Individual productIndividual) {
-        //TODO
-        return null;
+    protected Optional<ProductDTO> checkNextIndvToDto(Individual individual) {
+        return Objects.nonNull(nextProductConverter) ?
+                nextProductConverter.checkNextIndvToDto(individual) : Optional.empty();
     }
 
-
-    public Resource productDTOToResource(ProductDTO productDTO) {
-        //TODO
-        return null;
+    protected Optional<Individual> checkNextDtoToIndividual(ProductDTO productDTO) {
+        return Objects.nonNull(nextProductConverter) ?
+                nextProductConverter.checkNextDtoToIndividual(productDTO) : Optional.empty();
     }
 
-    public ProductDTO resourceToProductDTO(Resource productResource) {
-        //TODO
-        return null;
+    protected Optional<ProductDTO> checkNextResourceToDto(Resource res) {
+        return Objects.nonNull(nextProductConverter) ?
+                nextProductConverter.checkNextResourceToDto(res) : Optional.empty();
     }
 
+    protected Optional<Resource> checkNextDtoToResource(ProductDTO productDTO) {
+        return Objects.nonNull(nextProductConverter) ?
+                nextProductConverter.checkNextDtoToResource(productDTO) : Optional.empty();
+    }
+
+    protected Map<String, String> getPropertiesAndTypes() {
+        Map<String, String> mapOfPropertiesAndTypes = Collections.emptyMap();
+        //TODO create logic to retrive data from DB in order to keep easy the update of url and names that can change
+        mapOfPropertiesAndTypes.put("name", musicGalleryURI + "name");
+        mapOfPropertiesAndTypes.put("price", musicGalleryURI + "price");
+        mapOfPropertiesAndTypes.put("branch", musicGalleryURI + "branch");
+        mapOfPropertiesAndTypes.put("typeIs", musicGalleryURI + "typeIs");
+        mapOfPropertiesAndTypes.put("soldByStore", musicGalleryURI + "soldByStore");
+        mapOfPropertiesAndTypes.put("boughtByUser", musicGalleryURI + "boughtByUser");
+
+        return mapOfPropertiesAndTypes;
+    }
 }
