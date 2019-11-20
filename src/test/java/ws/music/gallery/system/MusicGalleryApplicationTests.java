@@ -21,6 +21,7 @@ import ws.music.gallery.system.enums.ClothSize;
 import ws.music.gallery.system.enums.Gender;
 import ws.music.gallery.system.enums.TypeProductAndBusiness;
 import ws.music.gallery.system.repository.ontologyrepo.MusicGalleryOntologyRepository;
+import ws.music.gallery.system.repository.ontologyrepo.impl.MusicGalleryOntologyRepositoryImpl;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -42,7 +43,7 @@ class MusicGalleryApplicationTests {
     private String MUSIC_GALLERY_URI;
 
     @Autowired
-    private MusicGalleryOntologyRepository musicGalleryOntologyRepository;
+    private MusicGalleryOntologyRepositoryImpl musicGalleryOntologyRepository;
 
     @Autowired
     private OntModel musicGalleryOntologyModel;
