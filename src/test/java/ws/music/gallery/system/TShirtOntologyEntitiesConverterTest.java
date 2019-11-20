@@ -3,6 +3,7 @@ package ws.music.gallery.system;
 import com.google.gson.Gson;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.*;
+import org.apache.jena.rdf.model.impl.PropertyImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,7 @@ public class TShirtOntologyEntitiesConverterTest {
     private Property typeIs;
     private Property boughtByUser;
     private Literal name;
+    private Property nameResource;
     private Resource product;
     private Resource clothing;
 
@@ -39,7 +41,7 @@ public class TShirtOntologyEntitiesConverterTest {
         product = musicGalleryOntologyModel.createResource(MUSIC_GALLERY_URI + "Product");
 
         clothing = musicGalleryOntologyModel.createResource(MUSIC_GALLERY_URI + "Clothing");
-        name = musicGalleryOntologyModel.createLiteral(MUSIC_GALLERY_URI + "name");
+        nameResource = musicGalleryOntologyModel.createProperty(MUSIC_GALLERY_URI + "name");
 
 
     }
@@ -76,11 +78,17 @@ public class TShirtOntologyEntitiesConverterTest {
         Resource myStoreInstance = musicGalleryOntologyModel.createResource(MUSIC_GALLERY_URI + "ComfortableTShirt");
         StmtIterator it = myStoreInstance.listProperties();
         System.out.println(myStoreInstance);
+        Property boughtByUser2 = new PropertyImpl(MUSIC_GALLERY_URI + "boughtByUser");
+        System.out.println(boughtByUser2);
 
 
-        System.out.println(myStoreInstance.getPropertyResourceValue(boughtByUser).getLocalName());
+/*        System.out.println(myStoreInstance.getPropertyResourceValue(boughtByUser).getLocalName());
         System.out.println(myStoreInstance.getProperty(boughtByUser).getResource().getLocalName());
-        System.out.println(myStoreInstance.getRequiredProperty(boughtByUser).getResource().getLocalName());
+        System.out.println(myStoreInstance.getRequiredProperty(boughtByUser).getResource().getLocalName());*/
+
+
+        System.out.println(myStoreInstance.getProperty(nameResource).getLiteral().getValue());
+        System.out.println(myStoreInstance.getProperty(boughtByUser2).getResource().getLocalName());
 
 
     }

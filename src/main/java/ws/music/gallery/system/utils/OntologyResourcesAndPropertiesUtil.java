@@ -7,8 +7,11 @@ import ws.music.gallery.system.enums.TypeProductAndBusiness;
 
 public class OntologyResourcesAndPropertiesUtil {
 
+
     @Value("${music.gallery.uri}")
     private String MUSIC_GALLERY_URI;
+
+
 
     static public Resource getBusinessOrProductType(TypeProductAndBusiness type){
         //TODO
