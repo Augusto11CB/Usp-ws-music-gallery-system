@@ -14,10 +14,7 @@ import java.util.List;
 public class SearchHistoryDTO {
 
     private Long id;
-
     private UserDTO userDTO;
-
     private String searchMadeInSearchBar;
-
     private List<ProductDTO> productsClicked;
 }

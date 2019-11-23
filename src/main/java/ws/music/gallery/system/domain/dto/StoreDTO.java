@@ -14,5 +14,6 @@ public class StoreDTO {
 
     private String name;
     private TypeProductAndBusiness typeBusiness;
+    private String URI;
 
 }
