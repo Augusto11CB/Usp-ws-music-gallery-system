@@ -1,4 +1,4 @@
-package ws.music.gallery.system.service.Impl;
+package ws.music.gallery.system.service.impl;
 
 import org.springframework.stereotype.Service;
 /*

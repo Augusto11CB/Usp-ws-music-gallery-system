@@ -2,6 +2,8 @@ package ws.music.gallery.system.service.impl;
 
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.rdf.model.impl.ResourceImpl;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import ws.music.gallery.system.converter.*;
 import ws.music.gallery.system.domain.dto.ProductDTO;
@@ -9,7 +11,6 @@ import ws.music.gallery.system.enums.TypeProductAndBusiness;
 import ws.music.gallery.system.repository.ontologyrepo.ProductOntologyRepository;
 import ws.music.gallery.system.repository.ontologyrepo.StoreOntologyRepository;
 import ws.music.gallery.system.service.ProductService;
-import ws.music.gallery.system.utils.OntologyResourcesAndPropertiesUtil;
 
 import java.util.List;
 import java.util.Map;
@@ -19,6 +20,8 @@ import java.util.stream.Collectors;
 @Service
 public class ProductServiceImpl implements ProductService {
 
+    @Value("${music.gallery.uri}")
+    private String MUSIC_GALLERY_URI;
 
     private StoreOntologyRepository storeOntologyRepository;
 
@@ -63,7 +66,7 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public List<ProductDTO> getProductsByType(TypeProductAndBusiness type) {
 
-        Resource productType = OntologyResourcesAndPropertiesUtil.getBusinessOrProductType(type);
+        Resource productType = new ResourceImpl(MUSIC_GALLERY_URI + type.getValue());
 
         List<Resource> indvList = productOntologyRepository.getAllProductsOfStore(productType);
         List<ProductDTO> productDTOList = indvList.stream().map(indv ->

@@ -1,24 +1,21 @@
 package ws.music.gallery.system.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
+import lombok.experimental.SuperBuilder;
 import ws.music.gallery.system.enums.Gender;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "USER", schema = "MUSIC_GALLERY_INDOOR")
 @Data
-@Builder
-@AllArgsConstructor
+@SuperBuilder
 @NoArgsConstructor
+@Entity
+@Table(name = "USER", schema = "MUSIC_GALLERY")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "ID_USER", unique = true, nullable = false)
     private Long idUser;
 
