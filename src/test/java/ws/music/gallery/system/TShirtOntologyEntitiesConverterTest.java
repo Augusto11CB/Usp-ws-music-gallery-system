@@ -93,6 +93,14 @@ public class TShirtOntologyEntitiesConverterTest {
 
     }
 
+    @Test
+    public void getTShirtResource() {
+        Resource resource = musicGalleryOntologyModel.getResource(MUSIC_GALLERY_URI + "BeeGeesTshirt");
+
+        resource.listProperties().forEachRemaining(stat -> System.out.println(stat));
+        System.out.println();
+    }
+
     private String getValueOfLiteral(Statement statement) {
         return null;
     }

@@ -29,3 +29,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Ignoring Music DB_LOGS
+music_gallery_db/

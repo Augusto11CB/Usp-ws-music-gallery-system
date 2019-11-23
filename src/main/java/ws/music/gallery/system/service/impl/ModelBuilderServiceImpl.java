@@ -1,4 +1,4 @@
-package ws.music.gallery.system.service.Impl;
+package ws.music.gallery.system.service.impl;
 
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
@@ -24,9 +24,6 @@ public class ModelBuilderServiceImpl implements ModelBuilderService {
         //ModelMaker
 
         //if ( !maker.hasModel(MODEL_NAME) == true ) {}
-
-
-
 
        return null;
     }
