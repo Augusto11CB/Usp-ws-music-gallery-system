@@ -2,14 +2,15 @@ package ws.music.gallery.system.service.impl;
 
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.rdf.model.impl.ResourceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import ws.music.gallery.system.converter.StoreOntologyEntitiesConverter;
 import ws.music.gallery.system.domain.dto.StoreDTO;
 import ws.music.gallery.system.enums.TypeProductAndBusiness;
 import ws.music.gallery.system.repository.ontologyrepo.StoreOntologyRepository;
 import ws.music.gallery.system.service.StoreService;
-import ws.music.gallery.system.utils.OntologyResourcesAndPropertiesUtil;
 
 import java.util.List;
 import java.util.Map;
@@ -18,6 +19,9 @@ import java.util.stream.Collectors;
 
 @Service
 public class StoreServiceImpl implements StoreService {
+
+    @Value("${music.gallery.uri}")
+    private String MUSIC_GALLERY_URI;
 
     @Autowired
     private StoreOntologyRepository storeOntologyRepository;
@@ -28,9 +32,11 @@ public class StoreServiceImpl implements StoreService {
 
 
     @Override
-    public List<StoreDTO> getStore(String storeName) {
+    public StoreDTO getStore(String storeName) {
         //TODO implement getStore
-        return null;
+        Resource store = storeOntologyRepository.getStore(storeName);
+        StoreDTO storeDTO = storeConverter.resourceToStoreDTO(store);
+        return storeDTO;
     }
 
     @Override
@@ -58,7 +64,7 @@ public class StoreServiceImpl implements StoreService {
     @Override
     public List<StoreDTO> getStoresByBusinessType(TypeProductAndBusiness type) {
 
-        Resource typeBusinessIndv = OntologyResourcesAndPropertiesUtil.getBusinessOrProductType(type);
+        Resource typeBusinessIndv = new ResourceImpl(MUSIC_GALLERY_URI + type.getValue());
 
         List<Resource> resourceList = storeOntologyRepository.getAllStoresByBusinessType(typeBusinessIndv);
         List<StoreDTO> storeDTOList = resourceList.stream().map(indv ->

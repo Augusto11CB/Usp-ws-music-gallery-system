@@ -10,7 +10,7 @@ public interface StoreService {
 
     List<StoreDTO> getAllStores();
 
-    List<StoreDTO> getStore(String storeName);
+    StoreDTO getStore(String storeName);
 
     List<StoreDTO> getAllStoresOrderByName();
 
