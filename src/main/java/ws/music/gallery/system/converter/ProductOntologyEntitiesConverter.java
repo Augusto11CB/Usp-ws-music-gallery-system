@@ -16,7 +16,7 @@ import java.util.Optional;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public abstract class ProductOntologyEntitiesConverter implements OntologyEntitiesConverter {
+public abstract class ProductOntologyEntitiesConverter {
 
     @Value("${music.gallery.uri}")
     protected String musicGalleryURI;
@@ -28,6 +28,17 @@ public abstract class ProductOntologyEntitiesConverter implements OntologyEntiti
         this.nextProductConverter = next;
         return nextProductConverter;
     }
+
+
+    abstract public Individual productDTOToindividual(ProductDTO productDTO);
+
+    abstract public ProductDTO individualToProductDTO(Individual productIndividual);
+
+    abstract public Resource productDTOToResource(ProductDTO productDTO);
+
+    abstract public ProductDTO resourceToProductDTO(Resource productResource);
+
+
 
     protected Optional<ProductDTO> checkNextIndvToDto(Individual individual) {
         return Objects.nonNull(nextProductConverter) ?
@@ -49,9 +60,9 @@ public abstract class ProductOntologyEntitiesConverter implements OntologyEntiti
                 nextProductConverter.checkNextDtoToResource(productDTO) : Optional.empty();
     }
 
+    //TODO create logic to retrive data from DB in order to keep easy the update of url and names that can change
     protected Map<String, String> getPropertiesAndTypes() {
         Map<String, String> mapOfPropertiesAndTypes = Collections.emptyMap();
-        //TODO create logic to retrive data from DB in order to keep easy the update of url and names that can change
         mapOfPropertiesAndTypes.put("name", musicGalleryURI + "name");
         mapOfPropertiesAndTypes.put("price", musicGalleryURI + "price");
         mapOfPropertiesAndTypes.put("branch", musicGalleryURI + "branch");

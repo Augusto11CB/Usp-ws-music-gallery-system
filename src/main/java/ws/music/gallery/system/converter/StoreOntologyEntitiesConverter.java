@@ -1,35 +1,55 @@
 package ws.music.gallery.system.converter;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.apache.jena.ontology.Individual;
+import org.apache.jena.ontology.OntModel;
+import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.rdf.model.impl.PropertyImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import ws.music.gallery.system.domain.dto.StoreDTO;
+import ws.music.gallery.system.enums.TypeProductAndBusiness;
 
 @Component
 @Data
 public class StoreOntologyEntitiesConverter {
 
-    public Individual StoredtoToIndividual(StoreDTO storeDTO) {
-        //TODO
-        return null;
+    @Autowired
+    OntModel musicGalleryOntologyModel;
+
+    @Value("${music.gallery.uri}")
+    private String MUSIC_GALLERY_URI;
+
+    private Property typeBusiness = new PropertyImpl(MUSIC_GALLERY_URI + "typeBusiness");
+    private Property name = new PropertyImpl(MUSIC_GALLERY_URI + "name");
+
+    public Individual storedtoToIndividual(StoreDTO storeDTO) {
+
+        return musicGalleryOntologyModel.getIndividual(storeDTO.getURI());
     }
 
     public StoreDTO individualToStoreDTO(Individual storeIndividual) {
-        //TODO
-        return null;
+
+        return StoreDTO.builder()
+                .name(storeIndividual.getProperty(name).getLiteral().getValue().toString())
+                .typeBusiness(TypeProductAndBusiness.valueOf(storeIndividual.getProperty(typeBusiness).getResource().getLocalName()))
+                .build();
     }
 
-    public Resource StoredtoToResource(StoreDTO storeDTO) {
-        //TODO
-        return null;
+    public Resource storedtoToResource(StoreDTO storeDTO) throws Exception {
+
+        return musicGalleryOntologyModel.getResource(storeDTO.getURI());
+
     }
 
     public StoreDTO resourceToStoreDTO(Resource storeResource) {
-        //TODO
-        return null;
+
+        return StoreDTO.builder()
+                .name(storeResource.getProperty(name).getLiteral().getValue().toString())
+                .typeBusiness(TypeProductAndBusiness.valueOf(storeResource.getProperty(typeBusiness).getResource().getLocalName()))
+                .build();
     }
 
 }
