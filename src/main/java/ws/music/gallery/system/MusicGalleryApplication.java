@@ -1,22 +1,20 @@
 package ws.music.gallery.system;
 
-import org.apache.jena.ontology.OntModel;
-import org.apache.jena.ontology.OntModelSpec;
-import org.apache.jena.rdf.model.ModelFactory;
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.InputStream;
 
 @SpringBootApplication
 public class MusicGalleryApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(MusicGalleryApplication.class, args);
+    }
+
+    @Bean
+    public ModelMapper initializeModelMapper() {
+        return new ModelMapper();
     }
 
 /*    @Bean
