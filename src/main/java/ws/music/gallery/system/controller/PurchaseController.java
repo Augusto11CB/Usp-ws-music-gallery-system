@@ -6,21 +6,19 @@ package ws.music.gallery.system.controller;
 2.3 Para efetivar a compra, o usuário devera estar registrado no sistema
 */
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.web.bind.annotation.*;
 import ws.music.gallery.system.domain.dto.ProductDTO;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping(value = "/purchase")
 public class PurchaseController {
 
 
     @PostMapping("/make-purchase")
+    @ApiOperation(value = "Perform a purchase given a client and a list of products")
     public void performPurchase(
             @RequestBody(required = true) List<ProductDTO> purchasedProducts,
             @RequestParam(name = "userCPF", required = true) String userCPF
