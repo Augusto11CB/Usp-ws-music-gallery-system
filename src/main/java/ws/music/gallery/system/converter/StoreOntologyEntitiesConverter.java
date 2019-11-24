@@ -26,7 +26,6 @@ public class StoreOntologyEntitiesConverter {
     private Property name = new PropertyImpl(MUSIC_GALLERY_URI + "name");
 
     public Individual storedtoToIndividual(StoreDTO storeDTO) {
-
         return musicGalleryOntologyModel.getIndividual(storeDTO.getURI());
     }
 
@@ -39,9 +38,7 @@ public class StoreOntologyEntitiesConverter {
     }
 
     public Resource storedtoToResource(StoreDTO storeDTO) throws Exception {
-
         return musicGalleryOntologyModel.getResource(storeDTO.getURI());
-
     }
 
     public StoreDTO resourceToStoreDTO(Resource storeResource) {

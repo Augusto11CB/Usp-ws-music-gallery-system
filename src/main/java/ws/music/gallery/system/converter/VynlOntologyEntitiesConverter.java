@@ -5,9 +5,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.ontology.OntModel;
+import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.rdf.model.impl.PropertyImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import ws.music.gallery.system.domain.dto.ProductDTO;
+import ws.music.gallery.system.domain.dto.StoreDTO;
+import ws.music.gallery.system.enums.TypeProductAndBusiness;
 
 import java.util.Map;
 
@@ -19,25 +24,36 @@ public class VynlOntologyEntitiesConverter extends ProductOntologyEntitiesConver
     @Autowired
     private OntModel musicGalleryOntologyModel;
 
+    @Value("${music.gallery.uri}")
+    private String MUSIC_GALLERY_URI;
+
+    private Property musicalGenre = new PropertyImpl(MUSIC_GALLERY_URI + "musicalGenre");
+    private Property releaseYear = new PropertyImpl(MUSIC_GALLERY_URI + "releaseYear");
+    private Property band = new PropertyImpl(MUSIC_GALLERY_URI + "band");
+
     public Individual productDTOToindividual(ProductDTO productDTO) {
-        //TODO
-        return null;
+        return musicGalleryOntologyModel.getIndividual(productDTO.getURI());
     }
 
     public ProductDTO individualToProductDTO(Individual productIndividual) {
-        //TODO
-        return null;
+        return ProductDTO.builder()
+                .musicalGenre(productIndividual.getProperty(musicalGenre).getLiteral().getValue().toString())
+                .releaseYear(Integer.parseInt(productIndividual.getProperty(releaseYear).getLiteral().getValue().toString()))
+                .band(productIndividual.getProperty(band).getLiteral().getValue().toString())
+                .build();
     }
 
 
     public Resource productDTOToResource(ProductDTO productDTO) {
-        //TODO
-        return null;
+        return musicGalleryOntologyModel.getIndividual(productDTO.getURI());
     }
 
     public ProductDTO resourceToProductDTO(Resource productResource) {
-        //TODO
-        return null;
+        return ProductDTO.builder()
+                .musicalGenre(productResource.getProperty(musicalGenre).getLiteral().getValue().toString())
+                .releaseYear(Integer.parseInt(productResource.getProperty(releaseYear).getLiteral().getValue().toString()))
+                .band(productResource.getProperty(band).getLiteral().getValue().toString())
+                .build();
     }
 
 

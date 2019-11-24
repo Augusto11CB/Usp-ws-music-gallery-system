@@ -7,8 +7,12 @@ import org.apache.jena.ontology.Individual;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.rdf.model.impl.PropertyImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import ws.music.gallery.system.domain.dto.ProductDTO;
+import ws.music.gallery.system.domain.dto.StoreDTO;
+import ws.music.gallery.system.enums.TypeProductAndBusiness;
 
 import java.util.Map;
 
@@ -20,25 +24,33 @@ public class MusicalInstrumentOntologyEntitiesConverter extends ProductOntologyE
     @Autowired
     OntModel musicGalleryOntologyModel;
 
+    @Value("${music.gallery.uri}")
+    private String MUSIC_GALLERY_URI;
+
+    private Property typeOfInstrument = new PropertyImpl(MUSIC_GALLERY_URI + "typeOfInstrument");
+    private Property isSecondHand = new PropertyImpl(MUSIC_GALLERY_URI + "isSecondHand");
+
     public Individual productDTOToindividual(ProductDTO productDTO) {
-        //TODO
-        return null;
+        return musicGalleryOntologyModel.getIndividual(productDTO.getURI());
     }
 
     public ProductDTO individualToProductDTO(Individual productIndividual) {
-        Property x;
-        return null;
+        return ProductDTO.builder()
+                .typeOfInstrument(productIndividual.getProperty(typeOfInstrument).getLiteral().getValue().toString())
+                .isSecondHand(Boolean.parseBoolean(productIndividual.getProperty(isSecondHand).getLiteral().getValue().toString()))
+                .build();
     }
 
 
     public Resource productDTOToResource(ProductDTO productDTO) {
-        //TODO
-        return null;
+        return musicGalleryOntologyModel.getResource(productDTO.getURI());
     }
 
     public ProductDTO resourceToProductDTO(Resource productResource) {
-        //TODO
-        return null;
+        return ProductDTO.builder()
+                .typeOfInstrument(productResource.getProperty(typeOfInstrument).getLiteral().getValue().toString())
+                .isSecondHand(productResource.getProperty(isSecondHand).getLiteral().getValue().toString())
+                .build();
     }
 
     @Override
