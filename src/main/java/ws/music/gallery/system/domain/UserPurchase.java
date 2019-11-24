@@ -20,7 +20,7 @@ public class UserPurchase {
     private Long id;
 
     @Column(name = "PRODUCT_URL", nullable = false)
-    private String productURL;
+    private String productURI;
 
     @Column(name = "PRODUCT_NAME", nullable = false)
     private String productName;
