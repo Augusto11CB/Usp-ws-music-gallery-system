@@ -1,6 +1,5 @@
 package ws.music.gallery.system.service.impl;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ws.music.gallery.system.domain.User;
@@ -11,7 +10,7 @@ import ws.music.gallery.system.repository.UserPurchaseRepository;
 import ws.music.gallery.system.repository.UserRepository;
 import ws.music.gallery.system.service.PurchaseService;
 
-import java.util.Collections;
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -38,6 +37,7 @@ public class PurchaseServiceImpl implements PurchaseService {
                 .productName(productDTO.getName())
                 .productType(productDTO.getTypeProductAndBusiness())
                 .productURI(productDTO.getURI())
+                .purchaseDate(LocalDate.now())
                 .user(user)
                 .build();
 

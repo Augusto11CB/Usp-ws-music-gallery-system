@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 import ws.music.gallery.system.enums.TypeProductAndBusiness;
 
+import java.time.LocalDate;
+
 @Data
 @SuperBuilder
 @AllArgsConstructor
@@ -19,6 +21,8 @@ public class UserPurchaseDTO {
     private String productName;
 
     private TypeProductAndBusiness productType;
+
+    private LocalDate purchaseDate;
 
     private UserDTO userDTO;
 }

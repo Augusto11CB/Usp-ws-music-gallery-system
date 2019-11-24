@@ -6,6 +6,7 @@ import lombok.experimental.SuperBuilder;
 import ws.music.gallery.system.enums.TypeProductAndBusiness;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 
 @Data
 @SuperBuilder
@@ -27,6 +28,9 @@ public class UserPurchase {
 
     @Column(name = "PRODUCT_TYPE", nullable = false)
     private TypeProductAndBusiness productType;
+
+    @Column(name = "PURCHASE_DATE", nullable = false)
+    private LocalDate purchaseDate;
 
     @ManyToOne(optional = false)
     @JoinColumn(name="ID_USER")
