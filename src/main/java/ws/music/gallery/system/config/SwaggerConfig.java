@@ -1,4 +1,4 @@
-/*
+
 package ws.music.gallery.system.config;
 
 
@@ -13,32 +13,22 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.Collections;
 
+import static springfox.documentation.builders.PathSelectors.any;
+
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
 
     @Bean
-    public Docket api() {
+    public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.any())
-                .paths(PathSelectors.any())
+                .paths(any())
                 .build();
-                //.apiInfo(getApiInfo());
     }
 
-    private ApiInfo getApiInfo() {
-        return new ApiInfo(
-                "WS - Music Gallery API",
-                "USP WS EP - Indoor System Music Gallery",
-                "Version 1.0.0.0",
-                "",
-                null,
-                "", "", Collections.emptyList());
-    }
-
-   */
-/* private ApiInfo apiInfo() {
+/*    private ApiInfo apiInfo() {
         return new ApiInfo(
                 "WS - Music Gallery API",
                 "USP WS EP - Indoor System Music Gallery",
@@ -46,6 +36,6 @@ public class SwaggerConfig {
                 "Terms of service",
                 new Contact("John Doe", "www.example.com", "myeaddress@company.com"),
                 "License of API", "API license URL", Collections.emptyList());
-    }*//*
+    }*/
 
-}*/
+}
