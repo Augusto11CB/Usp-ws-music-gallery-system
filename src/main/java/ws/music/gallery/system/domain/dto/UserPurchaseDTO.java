@@ -14,7 +14,7 @@ public class UserPurchaseDTO {
 
     private Long id;
 
-    private String productURL;
+    private String productURI;
 
     private String productName;
 
