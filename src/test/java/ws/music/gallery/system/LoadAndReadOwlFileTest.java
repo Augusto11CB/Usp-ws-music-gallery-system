@@ -3,12 +3,11 @@ package ws.music.gallery.system;
 import com.google.gson.Gson;
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.ontology.OntModel;
-import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.util.iterator.ExtendedIterator;
 import org.apache.log4j.Logger;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -48,7 +47,7 @@ public class LoadAndReadOwlFileTest {
     private Literal cpf;
 
 
-    @BeforeEach
+    @Before
     public void init() {
         gson = new Gson();
         //musicGalleryOntologyModel = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM, null);
