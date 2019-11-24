@@ -16,7 +16,7 @@ import java.time.LocalDate;
 public class UserPurchase {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID_USER_PURCHASE", unique = true, nullable = false)
     private Long id;
 
