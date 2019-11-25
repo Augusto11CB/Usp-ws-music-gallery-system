@@ -7,7 +7,10 @@ package ws.music.gallery.system.controller;
 */
 
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import ws.music.gallery.system.domain.dto.ProductDTO;
 
 import java.util.List;
@@ -20,8 +23,8 @@ public class PurchaseController {
     @PostMapping("/make-purchase")
     @ApiOperation(value = "Perform a purchase given a client and a list of products")
     public void performPurchase(
-            @RequestBody(required = true) List<ProductDTO> purchasedProducts,
-            @RequestParam(name = "userCPF", required = true) String userCPF
+            @RequestBody(required = true) List<ProductDTO> purchasedProducts
+            //@RequestBody(required = true) UserDTO user
     ) {
 
     }

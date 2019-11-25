@@ -1,10 +1,12 @@
 package ws.music.gallery.system.service.impl;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ws.music.gallery.system.domain.User;
 import ws.music.gallery.system.domain.UserPurchase;
 import ws.music.gallery.system.domain.dto.ProductDTO;
+import ws.music.gallery.system.domain.dto.UserDTO;
 import ws.music.gallery.system.exception.UserNotFoundException;
 import ws.music.gallery.system.repository.UserPurchaseRepository;
 import ws.music.gallery.system.repository.UserRepository;
@@ -22,11 +24,13 @@ public class PurchaseServiceImpl implements PurchaseService {
     @Autowired
     private UserPurchaseRepository userPurchaseRepository;
 
+    @Autowired
+    ModelMapper modelMapper;
 
     @Override
-    public void performPurchase(List<ProductDTO> purchasedProducts, String userCPF) throws UserNotFoundException {
-        User user = userRepository.findByCpfUser(userCPF)
-                .orElseThrow(() -> new UserNotFoundException("User did not found. Purchase was not Performed"));
+    public void performPurchase(List<ProductDTO> purchasedProducts, UserDTO userDTO) throws UserNotFoundException {
+        User user = userRepository.findByCpfUser(userDTO.getCpfUser())
+                .orElse(userRepository.save(modelMapper.map(userDTO, User.class)));
 
         purchasedProducts.forEach(productDTO -> this.persistPurchase(productDTO, user));
     }
