@@ -5,10 +5,8 @@ import org.apache.jena.ontology.OntModel;
 import org.apache.jena.ontology.OntModelSpec;
 import org.apache.jena.rdf.model.*;
 import org.apache.log4j.Logger;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.Before;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,7 +18,6 @@ import ws.music.gallery.system.domain.dto.StoreDTO;
 import ws.music.gallery.system.enums.ClothSize;
 import ws.music.gallery.system.enums.Gender;
 import ws.music.gallery.system.enums.TypeProductAndBusiness;
-import ws.music.gallery.system.repository.ontologyrepo.MusicGalleryOntologyRepository;
 import ws.music.gallery.system.repository.ontologyrepo.impl.MusicGalleryOntologyRepositoryImpl;
 
 import java.io.File;
@@ -53,7 +50,7 @@ class MusicGalleryApplicationTests {
     private Property property;
 
 
-    @BeforeEach
+    @Before
     public void init() {
         model = ModelFactory.createDefaultModel();
         InfModel inferredModel = ModelFactory.createRDFSModel(model);
@@ -133,15 +130,6 @@ class MusicGalleryApplicationTests {
         iterateThrough(ontoModel);
     }
 
-    @ParameterizedTest
-    @ValueSource(strings = {"store1", "store2"})
-    void createResourceStore(String storeURI) {
-
-        resource = model.createResource(storeURI);
-
-        System.out.println(resource);
-
-    }
 
     @Test
     public void testGetProducts() {

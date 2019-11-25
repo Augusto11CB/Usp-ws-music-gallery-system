@@ -139,9 +139,9 @@
     
 
 
-    <!-- http://www.musicgallery/branch -->
+    <!-- http://www.musicgallery/brand -->
 
-    <owl:DatatypeProperty rdf:about="http://www.musicgallery/branch">
+    <owl:DatatypeProperty rdf:about="http://www.musicgallery/brand">
         <rdfs:domain rdf:resource="http://www.musicgallery/Product"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
@@ -368,6 +368,21 @@
     
 
 
+    <!-- http://www.musicgallery/ARevoltaDosDandis -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/ARevoltaDosDandis">
+        <rdf:type rdf:resource="http://www.musicgallery/Vynl"/>
+        <soldByStore rdf:resource="http://www.musicgallery/RockPlanet"/>
+        <typeIs rdf:resource="http://www.musicgallery/MusicalMedia"/>
+        <band rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Engenheiros do Hawaii</band>
+        <musicalGenre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rock</musicalGenre>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Album Engenheiros do Hawaii - A Revolta Dos Dandis 1987</name>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">79.95</price>
+        <releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1987</releaseYear>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.musicgallery/AllRockTShirts -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/AllRockTShirts">
@@ -400,12 +415,44 @@
         <soldByStore rdf:resource="http://www.musicgallery/AllRockTShirts"/>
         <typeIs rdf:resource="http://www.musicgallery/Clothing"/>
         <band rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bee Gees</band>
-        <branch rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rener</branch>
+        <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rener</brand>
         <mainColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branca</mainColor>
         <musicalGenre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pop Rock</musicalGenre>
         <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camiseta dos Bee Gees Rener</name>
         <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">120.95</price>
         <typeOfFiber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jeans</typeOfFiber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/BlackTshirt -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/BlackTshirt">
+        <rdf:type rdf:resource="http://www.musicgallery/TShirt"/>
+        <clothSize rdf:resource="http://www.musicgallery/Medium"/>
+        <gender rdf:resource="http://www.musicgallery/Female"/>
+        <soldByStore rdf:resource="http://www.musicgallery/AllRockTShirts"/>
+        <typeIs rdf:resource="http://www.musicgallery/Clothing"/>
+        <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hering</brand>
+        <mainColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Preto</mainColor>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camiseta preta</name>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">39.95</price>
+        <typeOfFiber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algodao</typeOfFiber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/CloseToTheEdge -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/CloseToTheEdge">
+        <rdf:type rdf:resource="http://www.musicgallery/Vynl"/>
+        <soldByStore rdf:resource="http://www.musicgallery/RockPlanet"/>
+        <typeIs rdf:resource="http://www.musicgallery/MusicalMedia"/>
+        <band rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yes</band>
+        <musicalGenre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rock Progressivo</musicalGenre>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Album Yes - Close To The Edge 1972</name>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">199.95</price>
+        <releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1972</releaseYear>
     </owl:NamedIndividual>
     
 
@@ -428,7 +475,7 @@
         <gender rdf:resource="http://www.musicgallery/Female"/>
         <soldByStore rdf:resource="http://www.musicgallery/AllRockTShirts"/>
         <typeIs rdf:resource="http://www.musicgallery/Clothing"/>
-        <branch rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Levis</branch>
+        <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Levis</brand>
         <mainColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Azul</mainColor>
         <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camiseta Confortavel</name>
         <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">99.99</price>
@@ -443,7 +490,7 @@
         <rdf:type rdf:resource="http://www.musicgallery/MusicalInstrument"/>
         <soldByStore rdf:resource="http://www.musicgallery/PierreInstrumentosMusicais"/>
         <typeIs rdf:resource="http://www.musicgallery/MusicalEquipment"/>
-        <branch rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yamaha</branch>
+        <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yamaha</brand>
         <isSecondHand rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isSecondHand>
         <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guitarra Eletrica Vintage</name>
         <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3985.75</price>
@@ -466,6 +513,44 @@
     <owl:NamedIndividual rdf:about="http://www.musicgallery/Female">
         <rdf:type rdf:resource="http://www.musicgallery/Gender"/>
         <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Feminino</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/GIdleTshirt -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/GIdleTshirt">
+        <rdf:type rdf:resource="http://www.musicgallery/BandTShirt"/>
+        <clothSize rdf:resource="http://www.musicgallery/Small"/>
+        <gender rdf:resource="http://www.musicgallery/Female"/>
+        <soldByStore rdf:resource="http://www.musicgallery/AllRockTShirts"/>
+        <typeIs rdf:resource="http://www.musicgallery/Clothing"/>
+        <band rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(G)I-DLE</band>
+        <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Raglan</brand>
+        <mainColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branca</mainColor>
+        <musicalGenre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">K-pop</musicalGenre>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camiseta do (G)I-DLE Raglan</name>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">32.95</price>
+        <typeOfFiber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algodao</typeOfFiber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/KanaBoonTshirt -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/KanaBoonTshirt">
+        <rdf:type rdf:resource="http://www.musicgallery/BandTShirt"/>
+        <clothSize rdf:resource="http://www.musicgallery/Medium"/>
+        <gender rdf:resource="http://www.musicgallery/Female"/>
+        <soldByStore rdf:resource="http://www.musicgallery/AllRockTShirts"/>
+        <typeIs rdf:resource="http://www.musicgallery/Clothing"/>
+        <band rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KANA-BOON</band>
+        <band rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Raglan</band>
+        <mainColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Laranja</mainColor>
+        <musicalGenre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J-rock</musicalGenre>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camiseta KANA-BOON Raglan</name>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">32.95</price>
+        <typeOfFiber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algodao</typeOfFiber>
     </owl:NamedIndividual>
     
 
@@ -552,6 +637,25 @@
     
 
 
+    <!-- http://www.musicgallery/RedHotTshirt -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/RedHotTshirt">
+        <rdf:type rdf:resource="http://www.musicgallery/BandTShirt"/>
+        <clothSize rdf:resource="http://www.musicgallery/Small"/>
+        <gender rdf:resource="http://www.musicgallery/Female"/>
+        <soldByStore rdf:resource="http://www.musicgallery/AllRockTShirts"/>
+        <typeIs rdf:resource="http://www.musicgallery/Clothing"/>
+        <band rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Red Hot Chilli Peppers</band>
+        <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rener</brand>
+        <mainColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Black</mainColor>
+        <musicalGenre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Funk Rock</musicalGenre>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camiseta Red Hot Chilli Peppers Rener</name>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">120.95</price>
+        <typeOfFiber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algodao</typeOfFiber>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.musicgallery/RockPlanet -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/RockPlanet">
@@ -571,6 +675,66 @@
     
 
 
+    <!-- http://www.musicgallery/Spark -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/Spark">
+        <rdf:type rdf:resource="http://www.musicgallery/Vynl"/>
+        <soldByStore rdf:resource="http://www.musicgallery/RockPlanet"/>
+        <typeIs rdf:resource="http://www.musicgallery/MusicalMedia"/>
+        <band rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hiromi</band>
+        <musicalGenre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jazz</musicalGenre>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Album Hiromi - Spark 2016</name>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">130.0</price>
+        <releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2016</releaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/Theremin -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/Theremin">
+        <rdf:type rdf:resource="http://www.musicgallery/MusicalInstrument"/>
+        <soldByStore rdf:resource="http://www.musicgallery/PierreInstrumentosMusicais"/>
+        <typeIs rdf:resource="http://www.musicgallery/MusicalEquipment"/>
+        <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etherwave</brand>
+        <isSecondHand rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isSecondHand>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theremin Plus</name>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">4900.0</price>
+        <typeOfInstrument rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Campo elétrico</typeOfInstrument>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/UprightPiano -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/UprightPiano">
+        <rdf:type rdf:resource="http://www.musicgallery/MusicalInstrument"/>
+        <soldByStore rdf:resource="http://www.musicgallery/PierreInstrumentosMusicais"/>
+        <typeIs rdf:resource="http://www.musicgallery/MusicalEquipment"/>
+        <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yamaha</brand>
+        <isSecondHand rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isSecondHand>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yamaha U1</name>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">28000.0</price>
+        <typeOfInstrument rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Teclas</typeOfInstrument>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/Violin -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/Violin">
+        <rdf:type rdf:resource="http://www.musicgallery/MusicalInstrument"/>
+        <soldByStore rdf:resource="http://www.musicgallery/PierreInstrumentosMusicais"/>
+        <typeIs rdf:resource="http://www.musicgallery/MusicalEquipment"/>
+        <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lai</brand>
+        <isSecondHand rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isSecondHand>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Violino Lai</name>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5500.0</price>
+        <typeOfInstrument rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corda</typeOfInstrument>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.musicgallery/VitrolaPhillips -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/VitrolaPhillips">
@@ -578,11 +742,27 @@
         <soldByStore rdf:resource="http://www.musicgallery/PierreInstrumentosMusicais"/>
         <soldByStore rdf:resource="http://www.musicgallery/RockPlanet"/>
         <typeBusiness rdf:resource="http://www.musicgallery/MusicalEquipment"/>
-        <branch rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phillips</branch>
+        <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phillips</brand>
         <hasRadio rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasRadio>
         <hasUSBPort rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasUSBPort>
         <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vitrola Phillips</name>
         <price rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</price>
+        <voltage rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">220</voltage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/VitrolaRaveoOpera -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/VitrolaRaveoOpera">
+        <rdf:type rdf:resource="http://www.musicgallery/RecordPlayer"/>
+        <soldByStore rdf:resource="http://www.musicgallery/RockPlanet"/>
+        <typeBusiness rdf:resource="http://www.musicgallery/MusicalEquipment"/>
+        <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Raveo</brand>
+        <hasRadio rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasRadio>
+        <hasUSBPort rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasUSBPort>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vitrola com CD, K7, FM, USB e Bluetooth, Bivolt, Raveo, Ópera BT, 10</name>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1399.95</price>
         <voltage rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">220</voltage>
     </owl:NamedIndividual>
     
@@ -595,12 +775,97 @@
         <boughtByUser rdf:resource="http://www.musicgallery/Maria"/>
         <soldByStore rdf:resource="http://www.musicgallery/PierreInstrumentosMusicais"/>
         <typeBusiness rdf:resource="http://www.musicgallery/MusicalEquipment"/>
-        <branch>Raveo Sonetto</branch>
+        <brand>Raveo Sonetto</brand>
         <hasRadio rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasRadio>
         <hasUSBPort rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasUSBPort>
         <name>Vitrola Raveo Sonetto 20HJ-10</name>
         <price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">280.49</price>
         <voltage rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">110</voltage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/VitrolaSuperboxUitech -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/VitrolaSuperboxUitech">
+        <rdf:type rdf:resource="http://www.musicgallery/RecordPlayer"/>
+        <soldByStore rdf:resource="http://www.musicgallery/PierreInstrumentosMusicais"/>
+        <typeBusiness rdf:resource="http://www.musicgallery/MusicalEquipment"/>
+        <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uitech</brand>
+        <hasRadio rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasRadio>
+        <hasUSBPort rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasUSBPort>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vitrola Toca Discos de Vinil BLuetooth Stadio e Fita Cassete CD MP3 FM com Conversor Digital Arena Aria Phoenix Ópera Tenor Superbox Uitech</name>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">826.95</price>
+        <voltage rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">220</voltage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/VitrolaWoodburnTabaco -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/VitrolaWoodburnTabaco">
+        <rdf:type rdf:resource="http://www.musicgallery/RecordPlayer"/>
+        <soldByStore rdf:resource="http://www.musicgallery/RockPlanet"/>
+        <typeBusiness rdf:resource="http://www.musicgallery/MusicalEquipment"/>
+        <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ribeiro e Pavani</brand>
+        <hasRadio rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</hasRadio>
+        <hasUSBPort rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</hasUSBPort>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vitrola Woodburn Tabaco, Ribeiro e Pavani, 47.027</name>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1279.57</price>
+        <voltage rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">110</voltage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/WhiteTshirt -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/WhiteTshirt">
+        <rdf:type rdf:resource="http://www.musicgallery/TShirt"/>
+        <clothSize rdf:resource="http://www.musicgallery/ExtraLarge"/>
+        <gender rdf:resource="http://www.musicgallery/Male"/>
+        <soldByStore rdf:resource="http://www.musicgallery/AllRockTShirts"/>
+        <typeIs rdf:resource="http://www.musicgallery/Clothing"/>
+        <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hering</brand>
+        <mainColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branco</mainColor>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camiseta Branca</name>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">39.95</price>
+        <typeOfFiber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algodao</typeOfFiber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/YesTshirt -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/YesTshirt">
+        <rdf:type rdf:resource="http://www.musicgallery/BandTShirt"/>
+        <clothSize rdf:resource="http://www.musicgallery/Large"/>
+        <gender rdf:resource="http://www.musicgallery/Male"/>
+        <soldByStore rdf:resource="http://www.musicgallery/AllRockTShirts"/>
+        <typeIs rdf:resource="http://www.musicgallery/Clothing"/>
+        <band rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yes</band>
+        <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oficina Rock</brand>
+        <mainColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Black</mainColor>
+        <musicalGenre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Progressive Rock</musicalGenre>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camiseta Yes Oficina Rock</name>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">39.95</price>
+        <typeOfFiber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algodao</typeOfFiber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/ZikaTshirt -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/ZikaTshirt">
+        <rdf:type rdf:resource="http://www.musicgallery/TShirt"/>
+        <clothSize rdf:resource="http://www.musicgallery/Large"/>
+        <gender rdf:resource="http://www.musicgallery/Male"/>
+        <soldByStore rdf:resource="http://www.musicgallery/AllRockTShirts"/>
+        <typeIs rdf:resource="http://www.musicgallery/Clothing"/>
+        <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oakley</brand>
+        <mainColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branco</mainColor>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camiseta Zika da Oakley</name>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">79.95</price>
+        <typeOfFiber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algodao</typeOfFiber>
     </owl:NamedIndividual>
 </rdf:RDF>
 
