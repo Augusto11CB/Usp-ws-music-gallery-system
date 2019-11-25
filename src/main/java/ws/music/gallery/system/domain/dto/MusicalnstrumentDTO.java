@@ -10,7 +10,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Musicalnstrument extends ProductDTO{
+public class MusicalnstrumentDTO extends ProductDTO{
     private String typeOfInstrument; //TODO Enum?
     private boolean isSecondHand;
 }
