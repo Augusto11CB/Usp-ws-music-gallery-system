@@ -68,7 +68,7 @@ public abstract class ProductOntologyEntitiesConverter {
         mapOfPropertiesAndTypes.put("branch", musicGalleryURI + "branch");
         mapOfPropertiesAndTypes.put("typeIs", musicGalleryURI + "typeIs");
         mapOfPropertiesAndTypes.put("soldByStore", musicGalleryURI + "soldByStore");
-        mapOfPropertiesAndTypes.put("boughtByUser", musicGalleryURI + "boughtByUser");
+        //mapOfPropertiesAndTypes.put("boughtByUser", musicGalleryURI + "boughtByUser");
 
         return mapOfPropertiesAndTypes;
     }
