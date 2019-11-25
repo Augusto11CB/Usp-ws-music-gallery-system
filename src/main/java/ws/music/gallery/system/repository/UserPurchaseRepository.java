@@ -21,7 +21,7 @@ public interface UserPurchaseRepository extends CrudRepository<UserPurchase, Lon
     List<UserPurchase> findByUser(User user);
 
     @Query(value = "SELECT up FROM UserPurchase up WHERE up.user = ?1 ORDER BY up.purchaseDate")
-    List<UserPurchase> findTypesForRecommendation(@Param("user") User user);
+    List<UserPurchase> findTypesForRecommendation(@Param("user") User user, Pageable pageable);
 
 
 }
