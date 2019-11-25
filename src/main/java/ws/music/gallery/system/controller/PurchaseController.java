@@ -7,11 +7,9 @@ package ws.music.gallery.system.controller;
 */
 
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import ws.music.gallery.system.domain.dto.ProductDTO;
+import ws.music.gallery.system.enums.Gender;
 
 import java.util.List;
 
@@ -23,8 +21,11 @@ public class PurchaseController {
     @PostMapping("/make-purchase")
     @ApiOperation(value = "Perform a purchase given a client and a list of products")
     public void performPurchase(
-            @RequestBody(required = true) List<ProductDTO> purchasedProducts
-            //@RequestBody(required = true) UserDTO user
+            @RequestBody(required = true) List<ProductDTO> purchasedProducts,
+            @RequestParam(required = true, name = "cpf") String cpf,
+            @RequestParam(name = "gender") Gender gender,
+            @RequestParam(name = "age") int age
+
     ) {
 
     }
