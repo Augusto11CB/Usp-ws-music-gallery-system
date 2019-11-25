@@ -11,10 +11,7 @@ import org.apache.jena.rdf.model.impl.PropertyImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import ws.music.gallery.system.domain.dto.ProductDTO;
-import ws.music.gallery.system.domain.dto.StoreDTO;
-import ws.music.gallery.system.enums.TypeProductAndBusiness;
-
-import java.util.Map;
+import ws.music.gallery.system.domain.dto.VynlDTO;
 
 @Data
 @AllArgsConstructor
@@ -31,38 +28,31 @@ public class VynlOntologyEntitiesConverter extends ProductOntologyEntitiesConver
     private Property releaseYear = new PropertyImpl(MUSIC_GALLERY_URI + "releaseYear");
     private Property band = new PropertyImpl(MUSIC_GALLERY_URI + "band");
 
+    @Override
     public Individual productDTOToindividual(ProductDTO productDTO) {
         return musicGalleryOntologyModel.getIndividual(productDTO.getURI());
     }
 
+    @Override
     public ProductDTO individualToProductDTO(Individual productIndividual) {
-        return ProductDTO.builder()
+        return VynlDTO.builder()
                 .musicalGenre(productIndividual.getProperty(musicalGenre).getLiteral().getValue().toString())
                 .releaseYear(Integer.parseInt(productIndividual.getProperty(releaseYear).getLiteral().getValue().toString()))
                 .band(productIndividual.getProperty(band).getLiteral().getValue().toString())
                 .build();
     }
 
-
+    @Override
     public Resource productDTOToResource(ProductDTO productDTO) {
         return musicGalleryOntologyModel.getIndividual(productDTO.getURI());
     }
 
+    @Override
     public ProductDTO resourceToProductDTO(Resource productResource) {
-        return ProductDTO.builder()
+        return VynlDTO.builder()
                 .musicalGenre(productResource.getProperty(musicalGenre).getLiteral().getValue().toString())
                 .releaseYear(Integer.parseInt(productResource.getProperty(releaseYear).getLiteral().getValue().toString()))
                 .band(productResource.getProperty(band).getLiteral().getValue().toString())
                 .build();
-    }
-
-
-    @Override
-    protected Map<String, String> getPropertiesAndTypes() {
-        Map<String, String> mapOfPropertiesAndTypes = super.getPropertiesAndTypes();
-        mapOfPropertiesAndTypes.put("releaseYear", musicGalleryURI + "releaseYear");
-        mapOfPropertiesAndTypes.put("musicalGenre", musicGalleryURI + "musicalGenre");
-        mapOfPropertiesAndTypes.put("band", musicGalleryURI + "band");
-        return mapOfPropertiesAndTypes;
     }
 }
