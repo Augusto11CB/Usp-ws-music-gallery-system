@@ -30,7 +30,11 @@ public class RecommendationServiceTest {
 
     private User user;
 
+<<<<<<< HEAD
     @Before
+=======
+    @BeforeEach
+>>>>>>> 683327632fe494c72a299e14a54ad2fd9ae29f33
     void init() {
         this.user = User.builder()
                 .cpfUser("42745689323")
