@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import springfox.documentation.annotations.ApiIgnore;
 import ws.music.gallery.system.domain.dto.StoreDTO;
 import ws.music.gallery.system.enums.TypeProductAndBusiness;
@@ -26,7 +27,7 @@ Listar as Lojas por Ordem Alfabética
 */
 
 
-@Controller
+@RestController
 @RequestMapping(value = "/store")
 public class StoresController {
 

@@ -2,10 +2,12 @@ package ws.music.gallery.system.controller;
 
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import springfox.documentation.annotations.ApiIgnore;
 import ws.music.gallery.system.domain.dto.BandTShirtDTO;
 import ws.music.gallery.system.domain.dto.ProductDTO;
@@ -21,32 +23,51 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping(value = "/product")
 public class ProductsController {
 
     @Autowired
     ProductService productService;
 
+    private @Value("${music.gallery.uri}") String MUSIC_URI;
+
+
+    private StoreDTO mockStore = StoreDTO.builder()
+            .name("All Rock T-Shirts")
+            .typeBusiness(TypeProductAndBusiness.CLOTHING)
+            .URI(MUSIC_URI + "AllRockTshirts")
+            .build();
+
+    private ProductDTO mockProduct = ProductDTO.builder()
+            .branch("Hering")
+            .price(30.50)
+            .URI(MUSIC_URI)
+            .soldByStore(mockStore)
+            .typeProductAndBusiness(TypeProductAndBusiness.CLOTHING)
+            .build();
+
     @ApiOperation(value = "Get all products available in the Music Gallery", response = ProductDTO.class, responseContainer = "List")
     @GetMapping("/get-all")
     public List<ProductDTO> getAllProducts() {
+
+
 //        return productService.getAllProducts();
-        return Collections.emptyList();
+        return Arrays.asList(mockProduct);
     }
 
     @ApiOperation(value = "Get all products available in a store", response = ProductDTO.class, responseContainer = "List")
     @GetMapping("/get-products/{store-name}/")
     public List<ProductDTO> getProducstOfStore(@PathVariable(value = "store-name") String storeName) {
 //        return productService.getAllProductsOfStore(storeName);
-        return Collections.emptyList();
+        return Arrays.asList(mockProduct);
     }
 
     @ApiOperation(value = "Get product of a certain type", response = ProductDTO.class, responseContainer = "List", notes = "See Types Available")
     @GetMapping("/get-products/{product-type}")
     public List<ProductDTO> getProducstOfType(@PathVariable(value = "product-type") TypeProductAndBusiness productType) {
 //        return productService.getProductsByType(productType);
-        return Collections.emptyList();
+        return Arrays.asList(mockProduct);
     }
 
     @ApiIgnore
