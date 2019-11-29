@@ -26,6 +26,7 @@ public class UserPurchase {
     @Column(name = "PRODUCT_NAME", nullable = false)
     private String productName;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "PRODUCT_TYPE", nullable = false)
     private TypeProductAndBusiness productType;
 
