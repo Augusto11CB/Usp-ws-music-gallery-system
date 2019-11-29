@@ -40,14 +40,14 @@ public class ProductsController {
     }
 
     @ApiOperation(value = "Get all products available in a store", response = ProductDTO.class, responseContainer = "List")
-    @GetMapping("/get-products/{store-name}/")
+    @GetMapping("/get-products/store/{store-name}/")
     public List<ProductDTO> getProducstOfStore(@PathVariable(value = "store-name") String storeName) {
 //        return productService.getAllProductsOfStore(storeName);
         return Arrays.asList(mockObject.mockProduct, mockObject.mockThirt1, mockObject.mockThirt2);
     }
 
     @ApiOperation(value = "Get product of a certain type", response = ProductDTO.class, responseContainer = "List", notes = "See Types Available")
-    @GetMapping("/get-products/{product-type}")
+    @GetMapping("/get-products/type/{product-type}")
     public List<ProductDTO> getProducstOfType(@PathVariable(value = "product-type") TypeProductAndBusiness productType) {
 //        return productService.getProductsByType(productType);
         return Arrays.asList(mockObject.mockProduct, mockObject.mockThirt1, mockObject.mockThirt2);
