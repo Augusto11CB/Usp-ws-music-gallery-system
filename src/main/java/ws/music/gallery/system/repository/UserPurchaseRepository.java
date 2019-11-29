@@ -3,13 +3,13 @@ package ws.music.gallery.system.repository;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import ws.music.gallery.system.domain.User;
 import ws.music.gallery.system.domain.UserPurchase;
 import ws.music.gallery.system.enums.TypeProductAndBusiness;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface UserPurchaseRepository extends CrudRepository<UserPurchase, Long> {
@@ -21,7 +21,7 @@ public interface UserPurchaseRepository extends CrudRepository<UserPurchase, Lon
     List<UserPurchase> findByUser(User user);
 
     @Query(value = "SELECT up FROM UserPurchase up WHERE up.user = ?1 ORDER BY up.purchaseDate")
-    List<UserPurchase> findTypesForRecommendation(@Param("user") User user, Pageable pageable);
+    Optional<List<UserPurchase>> findTypesForRecommendation(User user, Pageable pageable);
 
 
 }
