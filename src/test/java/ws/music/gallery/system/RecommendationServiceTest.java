@@ -5,6 +5,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import ws.music.gallery.system.domain.User;
 import ws.music.gallery.system.domain.UserPurchase;
 import ws.music.gallery.system.enums.Gender;
@@ -30,11 +32,9 @@ public class RecommendationServiceTest {
 
     private User user;
 
-<<<<<<< HEAD
+
+
     @Before
-=======
-    @BeforeEach
->>>>>>> 683327632fe494c72a299e14a54ad2fd9ae29f33
     void init() {
         this.user = User.builder()
                 .cpfUser("42745689323")
@@ -56,7 +56,9 @@ public class RecommendationServiceTest {
 
         userPurchase.forEach(System.out::println);
 
-        List<UserPurchase> purchasesToUseInRecommendation = userPurchaseRepository.findTypesForRecommendation(this.user);
+        Pageable pageable = PageRequest.of(0, 3);
+
+        List<UserPurchase> purchasesToUseInRecommendation = userPurchaseRepository.findTypesForRecommendation(this.user, pageable).get();
 
         purchasesToUseInRecommendation.forEach(System.out::println);
     }
