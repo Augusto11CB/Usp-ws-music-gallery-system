@@ -66,7 +66,7 @@ public class StoresController {
 
         //return storeService.getStoresByBusinessType(type);
         List<StoreDTO> list = Arrays.asList(mockObject.mockStore, mockObject.mockStore1, mockObject.mockStore2);
-        return list.stream().filter(store -> store.getTypeBusiness().getValue().equals(type)).collect(Collectors.toList());
+        return list.stream().filter(store -> store.getTypeBusiness().equals(type)).collect(Collectors.toList());
     }
 
     @ApiIgnore
