@@ -1,28 +1,30 @@
 package ws.music.gallery.system.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 import ws.music.gallery.system.domain.dto.ProductDTO;
+import ws.music.gallery.system.util.MockObjects;
 
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping(value = "/search")
 public class SearchController {
 
+    @Autowired
+    MockObjects mockObject;
+
+
     @GetMapping()
     public List<ProductDTO> searchForProducts(@RequestParam(value = "product") String productSearched) {
-        return Collections.emptyList();
+        return Arrays.asList(mockObject.mockProduct, mockObject.mockThirt1, mockObject.mockThirt2);
     }
 
     @GetMapping("/{userCPF}/")
     public List<ProductDTO> userSearchForProducts(
             @PathVariable(value = "userCPF") String userCPF,
             @RequestParam(value = "product") String productSearched) {
-        return Collections.emptyList();
+        return Arrays.asList(mockObject.mockProduct, mockObject.mockThirt1, mockObject.mockThirt2);
     }
 }
