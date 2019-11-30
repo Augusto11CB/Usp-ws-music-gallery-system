@@ -6,6 +6,7 @@ import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.impl.PropertyImpl;
+import org.apache.jena.rdf.model.impl.ResourceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -24,6 +25,7 @@ public class StoreOntologyEntitiesConverter {
 
     private Property typeBusiness = new PropertyImpl(MUSIC_GALLERY_URI + "typeBusiness");
     private Property name = new PropertyImpl(MUSIC_GALLERY_URI + "name");
+    private Resource store = new ResourceImpl(MUSIC_GALLERY_URI + "Store");
 
     public Individual storedtoToIndividual(StoreDTO storeDTO) {
 
@@ -33,6 +35,7 @@ public class StoreOntologyEntitiesConverter {
     public StoreDTO individualToStoreDTO(Individual storeIndividual) {
 
         return StoreDTO.builder()
+                .URI(storeIndividual.getURI())
                 .name(storeIndividual.getProperty(name).getLiteral().getValue().toString())
                 .typeBusiness(TypeProductAndBusiness.valueOf(storeIndividual.getProperty(typeBusiness).getResource().getLocalName()))
                 .build();
@@ -47,6 +50,7 @@ public class StoreOntologyEntitiesConverter {
     public StoreDTO resourceToStoreDTO(Resource storeResource) {
 
         return StoreDTO.builder()
+                .URI(storeResource.getURI())
                 .name(storeResource.getProperty(name).getLiteral().getValue().toString())
                 .typeBusiness(TypeProductAndBusiness.valueOf(storeResource.getProperty(typeBusiness).getResource().getLocalName()))
                 .build();

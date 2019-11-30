@@ -39,6 +39,7 @@ public class ProductServiceImpl implements ProductService {
         this.storeOntologyRepository = storeOntologyRepository;
         this.productOntologyRepository = productOntologyRepository;
         this.productConverter = this.buildChainOfConversion();
+        //TODO verify why we couldn't read values from applications.properties from the constructor
     }
 
 
