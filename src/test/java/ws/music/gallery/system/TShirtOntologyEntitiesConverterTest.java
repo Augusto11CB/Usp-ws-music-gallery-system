@@ -4,8 +4,8 @@ import com.google.gson.Gson;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.*;
 import org.apache.jena.rdf.model.impl.PropertyImpl;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -30,7 +30,7 @@ public class TShirtOntologyEntitiesConverterTest {
     private Resource clothing;
 
 
-    @BeforeEach
+    @Before
     public void init() {
 
         gson = new Gson();

@@ -68,4 +68,16 @@ public abstract class ProductOntologyEntitiesConverter {
                 nextProductConverter.checkNextDtoToResource(productDTO) : Optional.empty();
     }
 
+    //TODO create logic to retrive data from DB in order to keep easy the update of url and names that can change
+    protected Map<String, String> getPropertiesAndTypes() {
+        Map<String, String> mapOfPropertiesAndTypes = Collections.emptyMap();
+        mapOfPropertiesAndTypes.put("name", musicGalleryURI + "name");
+        mapOfPropertiesAndTypes.put("price", musicGalleryURI + "price");
+        mapOfPropertiesAndTypes.put("branch", musicGalleryURI + "branch");
+        mapOfPropertiesAndTypes.put("typeIs", musicGalleryURI + "typeIs");
+        mapOfPropertiesAndTypes.put("soldByStore", musicGalleryURI + "soldByStore");
+        //mapOfPropertiesAndTypes.put("boughtByUser", musicGalleryURI + "boughtByUser");
+
+        return mapOfPropertiesAndTypes;
+    }
 }

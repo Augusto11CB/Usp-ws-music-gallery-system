@@ -16,7 +16,6 @@ public class ProductDTO {
     private TypeProductAndBusiness typeProductAndBusiness;
     private String branch;
     private double price;
-    private UserDTO boughtByUser;
     private StoreDTO soldByStore;
     private String URI;
     //private int availableStock; // TODO Maybe create a extra table to controll stock and keep the db normalized
