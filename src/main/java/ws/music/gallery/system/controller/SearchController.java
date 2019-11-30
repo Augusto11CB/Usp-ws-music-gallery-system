@@ -21,7 +21,7 @@ public class SearchController {
         return Arrays.asList(mockObject.mockProduct, mockObject.mockThirt1, mockObject.mockThirt2);
     }
 
-    @GetMapping("/{userCPF}/")
+    @GetMapping("/{userCPF}")
     public List<ProductDTO> userSearchForProducts(
             @PathVariable(value = "userCPF") String userCPF,
             @RequestParam(value = "product") String productSearched) {
