@@ -24,7 +24,7 @@ public class StoreOntologyEntitiesConverter {
 
     private Property typeBusiness = new PropertyImpl(MUSIC_GALLERY_URI + "typeBusiness");
     private Property name = new PropertyImpl(MUSIC_GALLERY_URI + "name");
-    private Property name = new PropertyImpl(MUSIC_GALLERY_URI + "description");
+    private Property description = new PropertyImpl(MUSIC_GALLERY_URI + "description");
 
     public Individual storedtoToIndividual(StoreDTO storeDTO) {
 
