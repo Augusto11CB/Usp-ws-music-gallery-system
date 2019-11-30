@@ -20,22 +20,25 @@ public class MockObjects {
             .name("All Rock TShirts")
             .typeBusiness(TypeProductAndBusiness.CLOTHING)
             .URI(MUSIC_URI + "AllRockTshirts")
+            .description("GENERICO")
             .build();
 
     public StoreDTO mockStore1 = StoreDTO.builder()
             .name("Pierre Instrumentos Musicais")
             .typeBusiness(TypeProductAndBusiness.MUSICAL_EQUIPMENT)
             .URI(MUSIC_URI + "PierreInstrumentosMusicais")
+            .description("GENERICO")
             .build();
 
     public StoreDTO mockStore2 = StoreDTO.builder()
             .name("Rock Planet")
             .typeBusiness(TypeProductAndBusiness.MUSICAL_MEDIA)
             .URI(MUSIC_URI + "RockPlanet")
+            .description("GENERICO")
             .build();
 
     public ProductDTO mockProduct = ProductDTO.builder()
-            .branch("Hering")
+            .brand("Hering")
             .price(30.50)
             .URI(MUSIC_URI)
             .name("Camiseta Preta")
@@ -45,7 +48,7 @@ public class MockObjects {
 
     public TShirtDTO mockThirt1 = TShirtDTO.builder()
             .designatedGender(Gender.MALE)
-            .branch("Levis")
+            .brand("Levis")
             .soldByStore(mockStore)
             .price(80)
             .URI(MUSIC_URI)
@@ -58,7 +61,7 @@ public class MockObjects {
 
     public TShirtDTO mockThirt2 = TShirtDTO.builder()
             .designatedGender(Gender.MALE)
-            .branch("Renner")
+            .brand("Renner")
             .soldByStore(mockStore)
             .price(180)
             .URI(MUSIC_URI)

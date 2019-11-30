@@ -2,7 +2,6 @@ package ws.music.gallery.system.controller;
 
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -75,7 +74,7 @@ public class ProductsController {
                 .typeOfFiber("Jeans")
                 .name("Tshirt scorpinos nice")
                 .typeProductAndBusiness(TypeProductAndBusiness.CLOTHING)
-                .branch("scorpions")
+                .brand("scorpions")
                 .price(120)
                 .soldByStore(pierreInstrumentosMusicais)
                 .build();
@@ -85,7 +84,7 @@ public class ProductsController {
                 .hasRadio(false)
                 .voltage(120)
                 .typeProductAndBusiness(TypeProductAndBusiness.MUSICAL_EQUIPMENT)
-                .branch("Phillips")
+                .brand("Phillips")
                 .price(601)
                 .soldByStore(allRockTshirts)
                 .build();

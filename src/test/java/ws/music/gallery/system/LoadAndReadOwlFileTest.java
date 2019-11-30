@@ -150,7 +150,7 @@ public class LoadAndReadOwlFileTest {
         mapOfPropertiesAndTypes.put("name", MUSIC_GALLERY_URI + "name");
 
         mapOfPropertiesAndTypes.put("price", MUSIC_GALLERY_URI + "price");
-        mapOfPropertiesAndTypes.put("branch", MUSIC_GALLERY_URI + "branch");
+        mapOfPropertiesAndTypes.put("branch", MUSIC_GALLERY_URI + "brand");
         mapOfPropertiesAndTypes.put("typeIs", MUSIC_GALLERY_URI + "typeIs");
         mapOfPropertiesAndTypes.put("soldByStore", MUSIC_GALLERY_URI + "soldByStore");
         mapOfPropertiesAndTypes.put("boughtByUser", MUSIC_GALLERY_URI + "boughtByUser");

@@ -65,7 +65,7 @@ public abstract class ProductOntologyEntitiesConverter {
         Map<String, String> mapOfPropertiesAndTypes = Collections.emptyMap();
         mapOfPropertiesAndTypes.put("name", musicGalleryURI + "name");
         mapOfPropertiesAndTypes.put("price", musicGalleryURI + "price");
-        mapOfPropertiesAndTypes.put("branch", musicGalleryURI + "branch");
+        mapOfPropertiesAndTypes.put("branch", musicGalleryURI + "brand");
         mapOfPropertiesAndTypes.put("typeIs", musicGalleryURI + "typeIs");
         mapOfPropertiesAndTypes.put("soldByStore", musicGalleryURI + "soldByStore");
         //mapOfPropertiesAndTypes.put("boughtByUser", musicGalleryURI + "boughtByUser");

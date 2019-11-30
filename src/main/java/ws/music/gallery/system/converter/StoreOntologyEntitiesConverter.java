@@ -24,6 +24,7 @@ public class StoreOntologyEntitiesConverter {
 
     private Property typeBusiness = new PropertyImpl(MUSIC_GALLERY_URI + "typeBusiness");
     private Property name = new PropertyImpl(MUSIC_GALLERY_URI + "name");
+    private Property name = new PropertyImpl(MUSIC_GALLERY_URI + "description");
 
     public Individual storedtoToIndividual(StoreDTO storeDTO) {
 
@@ -49,6 +50,8 @@ public class StoreOntologyEntitiesConverter {
         return StoreDTO.builder()
                 .name(storeResource.getProperty(name).getLiteral().getValue().toString())
                 .typeBusiness(TypeProductAndBusiness.valueOf(storeResource.getProperty(typeBusiness).getResource().getLocalName()))
+                .URI("")
+                .description("")
                 .build();
     }
 

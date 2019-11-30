@@ -153,7 +153,7 @@ class MusicGalleryApplicationTests {
                 .typeOfFiber("Jeans")
                 .name("Tshirt scorpinos nice")
                 .typeProductAndBusiness(TypeProductAndBusiness.CLOTHING)
-                .branch("scorpions")
+                .brand("scorpions")
                 .price(120)
                 .soldByStore(pierreInstrumentosMusicais)
                 .build();
@@ -163,7 +163,7 @@ class MusicGalleryApplicationTests {
                 .hasRadio(false)
                 .voltage(120)
                 .typeProductAndBusiness(TypeProductAndBusiness.MUSICAL_EQUIPMENT)
-                .branch("Phillips")
+                .brand("Phillips")
                 .price(601)
                 .soldByStore(allRockTshirts)
                 .build();
