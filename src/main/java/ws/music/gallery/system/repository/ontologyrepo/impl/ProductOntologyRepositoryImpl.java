@@ -14,40 +14,43 @@ import java.util.List;
 @Repository
 public class ProductOntologyRepositoryImpl implements ProductOntologyRepository {
 
-    @Value("${music.gallery.uri}")
-    private String MUSIC_GALLERY_URI;
+
+    public static String MUSIC_GALLERY_URI;
 
     private OntModel musicGalleryOntologyModel;
 
     private MusicGalleryOntologyRepository musicGalleryOntologyRepository;
 
-    private final Resource productResourceDef;
+    private Resource productResourceDef; // = musicGalleryOntologyModel.createResource(MUSIC_GALLERY_URI + "Product");
 
-    private final Property typeIsProp;
+    private Property typeIsProp; // =  musicGalleryOntologyModel.createProperty(MUSIC_GALLERY_URI + "typeIs");
 
-    private final Property soldByStoreProp;
+    private Property soldByStoreProp; //= musicGalleryOntologyModel.createProperty(MUSIC_GALLERY_URI + "soldByStore");
 
     public ProductOntologyRepositoryImpl(OntModel musicGalleryOntologyModel, MusicGalleryOntologyRepository musicGalleryOntologyRepository) {
         this.musicGalleryOntologyRepository = musicGalleryOntologyRepository;
         this.musicGalleryOntologyModel = musicGalleryOntologyModel;
-        this.productResourceDef = musicGalleryOntologyModel.createResource(MUSIC_GALLERY_URI + "Product");
-        this.typeIsProp = musicGalleryOntologyModel.createProperty(MUSIC_GALLERY_URI + "typeIs");
-        this.soldByStoreProp = musicGalleryOntologyModel.createProperty(MUSIC_GALLERY_URI + "soldByStore");
+
+
+
     }
 
     @Override
     public List<Individual> getAllProducts() {
-
+        this.productResourceDef = musicGalleryOntologyModel.createResource(MUSIC_GALLERY_URI + "Product");
         return musicGalleryOntologyRepository.getAllResources(productResourceDef);
     }
 
     @Override
     public List<Resource> getAllProductsByType(Resource typeOfProduct) {
+        this.typeIsProp = musicGalleryOntologyModel.createProperty(MUSIC_GALLERY_URI + "typeIs");
+
         return musicGalleryOntologyRepository.getAllResourcesByProperty(typeIsProp, typeOfProduct);
     }
 
     @Override
     public List<Resource> getAllProductsOfStore(Resource store) {
+        this.soldByStoreProp = musicGalleryOntologyModel.createProperty(MUSIC_GALLERY_URI + "soldByStore");
         return musicGalleryOntologyRepository.getAllResourcesByProperty(soldByStoreProp, store);
     }
 
@@ -58,4 +61,9 @@ public class ProductOntologyRepositoryImpl implements ProductOntologyRepository 
         }
     }
     */
+
+    @Value("${music.gallery.uri}")
+    public void setPrivateName(String privateName) {
+        MUSIC_GALLERY_URI = privateName;
+    }
 }

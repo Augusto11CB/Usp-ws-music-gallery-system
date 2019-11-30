@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ws.music.gallery.system.domain.dto.ProductDTO;
 import ws.music.gallery.system.domain.dto.StoreDTO;
+import ws.music.gallery.system.service.RecommendationService;
 import ws.music.gallery.system.util.MockObjects;
 
 import java.util.Arrays;
@@ -20,6 +21,9 @@ public class RecommendationController {
     @Autowired
     MockObjects mockObject;
 
+    @Autowired
+    RecommendationService recommendationService;
+
     @ApiOperation(value = "Get recommended stores given a client", hidden = true, response = StoreDTO.class, responseContainer = "List")
     @GetMapping("/get-recommended-stores/")
     public List<StoreDTO> getRecommendedStores(@RequestParam(name = "userCPF", required = true) String userCPF) {
@@ -29,7 +33,8 @@ public class RecommendationController {
     @ApiOperation(value = "Get recommended products for a client", response = ProductDTO.class, responseContainer = "List")
     @GetMapping("/get-recommended-products/")
     public List<ProductDTO> getRecommendedProducts(@RequestParam(name = "userCPF", required = true) String userCPF) {
-        return Arrays.asList(mockObject.mockProduct, mockObject.mockThirt1, mockObject.mockThirt2);
+        return recommendationService.recommendProducsSameTypeLastPurchases(userCPF);
+        //return Arrays.asList(mockObject.mockProduct, mockObject.mockThirt1, mockObject.mockThirt2);
     }
 
 

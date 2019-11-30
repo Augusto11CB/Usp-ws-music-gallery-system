@@ -7,9 +7,10 @@ import lombok.Getter;
 @Getter
 public enum TypeProductAndBusiness
 {
-    MUSICAL_EQUIPMENT("EQUIPAMENTO MUSICAL"),
-    MUSICAL_MEDIA("MEDIA MUSICAL"),
-    CLOTHING("VESTUARIO");
+    MUSICAL_EQUIPMENT("MusicalEquipment"),
+    MUSICAL_MEDIA("MusicalMedia"),
+    CLOTHING("Clothing");
 
     private String value;
+
 }

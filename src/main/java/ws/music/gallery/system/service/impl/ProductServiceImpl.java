@@ -68,7 +68,9 @@ public class ProductServiceImpl implements ProductService {
 
         Resource productType = new ResourceImpl(MUSIC_GALLERY_URI + type.getValue());
 
-        List<Resource> indvList = productOntologyRepository.getAllProductsOfStore(productType);
+        List<Resource> indvList = productOntologyRepository.getAllProductsByType(productType);
+        indvList.forEach(System.out::println);// TODO Until here works fine!!
+
         List<ProductDTO> productDTOList = indvList.stream().map(indv ->
                 productConverter.resourceToProductDTO(indv)).collect(Collectors.toList());
 

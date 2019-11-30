@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import ws.music.gallery.system.repository.ontologyrepo.MusicGalleryOntologyRepository;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -33,7 +34,7 @@ public class MusicGalleryOntologyRepositoryImpl implements MusicGalleryOntologyR
     }
 
     public List<Resource> getAllResourcesByProperty(Property property, RDFNode value) {
-        List<Resource> indvList = Collections.emptyList();
+        ArrayList indvList = new ArrayList();
 
         ResIterator iterator = musicGalleryOntologyModel.listResourcesWithProperty(property, value);
         iterator.forEachRemaining(indv -> indvList.add(indv));
