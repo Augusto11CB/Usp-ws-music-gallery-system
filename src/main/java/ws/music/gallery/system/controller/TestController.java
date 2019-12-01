@@ -10,12 +10,26 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import ws.music.gallery.system.converter.MusicalInstrumentOntologyEntitiesConverter;
+import ws.music.gallery.system.converter.RecordPlayerOntologyEntitiesConverter;
 import ws.music.gallery.system.converter.TShirtOntologyEntitiesConverter;
+import ws.music.gallery.system.converter.VynlOntologyEntitiesConverter;
 import ws.music.gallery.system.domain.dto.ProductDTO;
 
 @RestController
 public class TestController {
 
+    @Autowired
+    TShirtOntologyEntitiesConverter tShirtOntologyEntitiesConverter;
+
+    @Autowired
+    VynlOntologyEntitiesConverter vynlOntologyEntitiesConverter;
+
+    @Autowired
+    RecordPlayerOntologyEntitiesConverter recordPlayerOntologyEntitiesConverter;
+
+    @Autowired
+    MusicalInstrumentOntologyEntitiesConverter musicalInstrumentOntologyEntitiesConverter;
 
     @Value("${music.gallery.uri}")
     private String MUSIC_GALLERY_URI;

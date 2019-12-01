@@ -10,6 +10,7 @@ import org.apache.jena.rdf.model.impl.ResourceImpl;
 import org.apache.jena.vocabulary.RDF;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 import ws.music.gallery.system.domain.dto.MusicalnstrumentDTO;
 import ws.music.gallery.system.domain.dto.ProductDTO;
 import ws.music.gallery.system.domain.dto.StoreDTO;
@@ -21,6 +22,7 @@ import java.util.Map;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Component
 public class MusicalInstrumentOntologyEntitiesConverter extends ProductOntologyEntitiesConverter {
 
     @Autowired
