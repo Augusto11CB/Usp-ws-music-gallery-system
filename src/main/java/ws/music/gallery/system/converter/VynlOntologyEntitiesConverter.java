@@ -40,14 +40,15 @@ public class VynlOntologyEntitiesConverter extends ProductOntologyEntitiesConver
 
     public ProductDTO individualToProductDTO(Individual productIndividual) {
 
-        Resource storeResource = productIndividual.getProperty(OntologyPropertyAndResourceUtils.soldByStore).getResource();
-        StoreDTO storeDTO = storeOntologyEntitiesConverter.resourceToStoreDTO(storeResource);
 
         if (productIndividual.hasProperty(RDF.type, new ResourceImpl(OntologyPropertyAndResourceUtils.vynl))) {
+
+            StoreDTO storeDTO = storeOntologyEntitiesConverter.resourceToStoreDTO(productIndividual.getProperty(OntologyPropertyAndResourceUtils.soldByStore).getResource());
+
             return VynlDTO.builder()
                     .name(productIndividual.getProperty(OntologyPropertyAndResourceUtils.name).getLiteral().getValue().toString())
-                    .typeProductAndBusiness(TypeProductAndBusiness.valueOf(productIndividual.getProperty(OntologyPropertyAndResourceUtils.typeIs).getResource().getLocalName().toUpperCase()))
-                    .brand(productIndividual.getProperty(OntologyPropertyAndResourceUtils.brand).getLiteral().getValue().toString())
+                    .typeProductAndBusiness(TypeProductAndBusiness.getEnum(productIndividual.getProperty(OntologyPropertyAndResourceUtils.typeIs).getResource().getLocalName().toUpperCase()))
+
                     .price(productIndividual.getProperty(OntologyPropertyAndResourceUtils.price).getDouble())
                     .soldByStore(storeDTO)
                     .URI(productIndividual.getURI())
@@ -81,8 +82,8 @@ public class VynlOntologyEntitiesConverter extends ProductOntologyEntitiesConver
 
             return VynlDTO.builder()
                     .name(productResource.getProperty(OntologyPropertyAndResourceUtils.name).getLiteral().getValue().toString())
-                    .typeProductAndBusiness(TypeProductAndBusiness.valueOf(productResource.getProperty(OntologyPropertyAndResourceUtils.typeIs).getResource().getLocalName().toUpperCase()))
-                    .brand(productResource.getProperty(OntologyPropertyAndResourceUtils.brand).getLiteral().getValue().toString())
+                    .typeProductAndBusiness(TypeProductAndBusiness.getEnum(productResource.getProperty(OntologyPropertyAndResourceUtils.typeIs).getResource().getLocalName().toUpperCase()))
+
                     .price(productResource.getProperty(OntologyPropertyAndResourceUtils.price).getDouble())
                     .soldByStore(storeDTO)
                     .URI(productResource.getURI())

@@ -545,7 +545,7 @@
         <soldByStore rdf:resource="http://www.musicgallery/AllRockTShirts"/>
         <typeIs rdf:resource="http://www.musicgallery/Clothing"/>
         <band rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KANA-BOON</band>
-        <band rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Raglan</band>
+        <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Raglan</brand>
         <mainColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Laranja</mainColor>
         <musicalGenre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">J-rock</musicalGenre>
         <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camiseta KANA-BOON Raglan</name>
@@ -741,7 +741,7 @@
         <rdf:type rdf:resource="http://www.musicgallery/RecordPlayer"/>
         <soldByStore rdf:resource="http://www.musicgallery/PierreInstrumentosMusicais"/>
         <soldByStore rdf:resource="http://www.musicgallery/RockPlanet"/>
-        <typeBusiness rdf:resource="http://www.musicgallery/MusicalEquipment"/>
+        <typeIs rdf:resource="http://www.musicgallery/MusicalEquipment"/>
         <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Phillips</brand>
         <hasRadio rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasRadio>
         <hasUSBPort rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasUSBPort>
@@ -757,7 +757,7 @@
     <owl:NamedIndividual rdf:about="http://www.musicgallery/VitrolaRaveoOpera">
         <rdf:type rdf:resource="http://www.musicgallery/RecordPlayer"/>
         <soldByStore rdf:resource="http://www.musicgallery/RockPlanet"/>
-        <typeBusiness rdf:resource="http://www.musicgallery/MusicalEquipment"/>
+        <typeIs rdf:resource="http://www.musicgallery/MusicalEquipment"/>
         <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Raveo</brand>
         <hasRadio rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasRadio>
         <hasUSBPort rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasUSBPort>
@@ -774,7 +774,7 @@
         <rdf:type rdf:resource="http://www.musicgallery/RecordPlayer"/>
         <boughtByUser rdf:resource="http://www.musicgallery/Maria"/>
         <soldByStore rdf:resource="http://www.musicgallery/PierreInstrumentosMusicais"/>
-        <typeBusiness rdf:resource="http://www.musicgallery/MusicalEquipment"/>
+        <typeIs rdf:resource="http://www.musicgallery/MusicalEquipment"/>
         <brand>Raveo Sonetto</brand>
         <hasRadio rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</hasRadio>
         <hasUSBPort rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasUSBPort>
@@ -790,7 +790,7 @@
     <owl:NamedIndividual rdf:about="http://www.musicgallery/VitrolaSuperboxUitech">
         <rdf:type rdf:resource="http://www.musicgallery/RecordPlayer"/>
         <soldByStore rdf:resource="http://www.musicgallery/PierreInstrumentosMusicais"/>
-        <typeBusiness rdf:resource="http://www.musicgallery/MusicalEquipment"/>
+        <typeIs rdf:resource="http://www.musicgallery/MusicalEquipment"/>
         <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Uitech</brand>
         <hasRadio rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasRadio>
         <hasUSBPort rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasUSBPort>
@@ -806,7 +806,7 @@
     <owl:NamedIndividual rdf:about="http://www.musicgallery/VitrolaWoodburnTabaco">
         <rdf:type rdf:resource="http://www.musicgallery/RecordPlayer"/>
         <soldByStore rdf:resource="http://www.musicgallery/RockPlanet"/>
-        <typeBusiness rdf:resource="http://www.musicgallery/MusicalEquipment"/>
+        <typeIs rdf:resource="http://www.musicgallery/MusicalEquipment"/>
         <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ribeiro e Pavani</brand>
         <hasRadio rdf:datatype="http://www.w3.org/2001/XMLSchema#string">false</hasRadio>
         <hasUSBPort rdf:datatype="http://www.w3.org/2001/XMLSchema#string">true</hasUSBPort>

@@ -34,8 +34,8 @@ public class ProductsController {
     public List<ProductDTO> getAllProducts() {
 
 
-//        return productService.getAllProducts();
-        return Arrays.asList(mockObject.mockProduct, mockObject.mockThirt1, mockObject.mockThirt2);
+        return productService.getAllProducts();
+        //return Arrays.asList(mockObject.mockProduct, mockObject.mockThirt1, mockObject.mockThirt2);
     }
 
     @ApiOperation(value = "Get product of a certain type", response = ProductDTO.class, responseContainer = "List", notes = "See Types Available")

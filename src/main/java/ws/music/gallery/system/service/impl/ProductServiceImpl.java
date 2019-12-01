@@ -50,7 +50,7 @@ public class ProductServiceImpl implements ProductService {
 
         List<Individual> indvList = productOntologyRepository.getAllProducts();
         List<ProductDTO> productDTOList = indvList.stream().map(indv ->
-                productConverter.individualToProductDTO(indv)).collect(Collectors.toList());
+                productConverter.resourceToProductDTO(indv)).collect(Collectors.toList());
 
         return productDTOList;
     }

@@ -35,6 +35,7 @@ public class OntologyPropertyAndResourceUtils {
     public static Property isSecondHand = new PropertyImpl(MUSIC_GALLERY_URI + "isSecondHand");
 
     public static String tshirtClass =  MUSIC_GALLERY_URI +  "TShirt";
+    public static String bandTshirtClass =  MUSIC_GALLERY_URI +  "BandTShirt";
     public static String recordPlayer = MUSIC_GALLERY_URI +  "RecordPlayer";
     public static String musicalInstrument = MUSIC_GALLERY_URI +  "MusicalInstrument";
     public static String vynl = MUSIC_GALLERY_URI +  "Vynl";

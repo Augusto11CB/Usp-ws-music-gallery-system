@@ -52,7 +52,7 @@ public class TShirtOntologyEntitiesConverter extends ProductOntologyEntitiesConv
 
             return TShirtDTO.builder()
                     .name(productIndividual.getProperty(OntologyPropertyAndResourceUtils.name).getLiteral().getValue().toString())
-                    .typeProductAndBusiness(TypeProductAndBusiness.valueOf(productIndividual.getProperty(OntologyPropertyAndResourceUtils.typeIs).getResource().getLocalName().toUpperCase()))
+                    .typeProductAndBusiness(TypeProductAndBusiness.getEnum(productIndividual.getProperty(OntologyPropertyAndResourceUtils.typeIs).getResource().getLocalName().toUpperCase()))
                     .brand(productIndividual.getProperty(OntologyPropertyAndResourceUtils.brand).getLiteral().getValue().toString())
                     .price(productIndividual.getProperty(OntologyPropertyAndResourceUtils.price).getDouble())
                     .soldByStore(storeDTO)
@@ -73,18 +73,19 @@ public class TShirtOntologyEntitiesConverter extends ProductOntologyEntitiesConv
     }
 
     public ProductDTO resourceToProductDTO(Resource productResource) {
-
+        
         System.out.println("TShirt resourceToProductDTO:" + productResource);
 
         Resource storeResource = productResource.getProperty(OntologyPropertyAndResourceUtils.soldByStore).getResource();
         System.out.println(storeResource);
 
         StoreDTO storeDTO = storeOntologyEntitiesConverter.resourceToStoreDTO(storeResource);
-        if (productResource.hasProperty(RDF.type, new ResourceImpl(OntologyPropertyAndResourceUtils.tshirtClass))) {
+        if (productResource.hasProperty(RDF.type, new ResourceImpl(OntologyPropertyAndResourceUtils.tshirtClass)) ||
+                productResource.hasProperty(RDF.type, new ResourceImpl(OntologyPropertyAndResourceUtils.bandTshirtClass))) {
 
             return TShirtDTO.builder()
                     .name(productResource.getProperty(OntologyPropertyAndResourceUtils.name).getLiteral().getValue().toString())
-                    .typeProductAndBusiness(TypeProductAndBusiness.valueOf(productResource.getProperty(OntologyPropertyAndResourceUtils.typeIs).getResource().getLocalName().toUpperCase()))
+                    .typeProductAndBusiness(TypeProductAndBusiness.getEnum(productResource.getProperty(OntologyPropertyAndResourceUtils.typeIs).getResource().getLocalName().toUpperCase()))
                     .brand(productResource.getProperty(OntologyPropertyAndResourceUtils.brand).getLiteral().getValue().toString())
                     .price(productResource.getProperty(OntologyPropertyAndResourceUtils.price).getDouble())
                     .soldByStore(storeDTO)

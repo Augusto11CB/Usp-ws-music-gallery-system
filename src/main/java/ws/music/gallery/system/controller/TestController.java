@@ -22,14 +22,10 @@ public class TestController {
     @Autowired
     TShirtOntologyEntitiesConverter tShirtOntologyEntitiesConverter;
 
-    @Autowired
-    VynlOntologyEntitiesConverter vynlOntologyEntitiesConverter;
 
-    @Autowired
-    RecordPlayerOntologyEntitiesConverter recordPlayerOntologyEntitiesConverter;
 
-    @Autowired
-    MusicalInstrumentOntologyEntitiesConverter musicalInstrumentOntologyEntitiesConverter;
+
+
 
     @Value("${music.gallery.uri}")
     private String MUSIC_GALLERY_URI;
@@ -41,9 +37,8 @@ public class TestController {
     @ApiOperation(value = "Tshirt Convert Controller Test", response = ProductDTO.class, responseContainer = "List")
     @GetMapping("/test")
     public ProductDTO testTshirtConverterIndividualToProductDTO() {
-        //Individual indv = musicGalleryOntologyModel.getIndividual(MUSIC_GALLERY_URI + "ComfortableTShirt");
-        //return tShirtOntologyEntitiesConverter.individualToProductDTO(indv);
-        return null;
+        Individual indv = musicGalleryOntologyModel.getIndividual(MUSIC_GALLERY_URI + "KanaBoonTshirt");
+        return tShirtOntologyEntitiesConverter.resourceToProductDTO(indv);
     }
 }
 
