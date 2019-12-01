@@ -21,7 +21,7 @@ public class StoreOntologyEntitiesConverter {
     @Value("${music.gallery.uri}")
     private String MUSIC_GALLERY_URI;
 
-    public Individual storedtoToIndividual(StoreDTO storeDTO) {
+   public Individual storedtoToIndividual(StoreDTO storeDTO) {
 
         return musicGalleryOntologyModel.getIndividual(storeDTO.getURI());
     }
@@ -47,6 +47,7 @@ public class StoreOntologyEntitiesConverter {
                 .name(storeResource.getProperty(OntologyPropertyAndResourceUtils.name).getLiteral().getValue().toString())
                 .typeBusiness(TypeProductAndBusiness.getEnum(storeResource.getProperty(OntologyPropertyAndResourceUtils.typeBusiness).getResource().getLocalName().toUpperCase()))
                 .URI(storeResource.getURI())
+                .description("")
                 .build();
     }
 

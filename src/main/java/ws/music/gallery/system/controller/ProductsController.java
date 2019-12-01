@@ -42,7 +42,7 @@ public class ProductsController {
     }
 
     @ApiOperation(value = "Get product of a certain type", response = ProductDTO.class, responseContainer = "List", notes = "See Types Available")
-    @GetMapping("/get-products/{product-type}")
+    @GetMapping("/get-products/type/{product-type}")
     public List<ProductDTO> getProducstOfType(@PathVariable(value = "product-type") TypeProductAndBusiness productType) {
         return productService.getProductsByType(productType);
         //   return Arrays.asList(mockObject.mockProduct, mockObject.mockThirt1, mockObject.mockThirt2);

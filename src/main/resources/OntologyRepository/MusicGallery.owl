@@ -157,6 +157,12 @@
     
 
 
+    <!-- http://www.musicgallery/description -->
+
+    <owl:DatatypeProperty rdf:about="http://www.musicgallery/description"/>
+    
+
+
     <!-- http://www.musicgallery/hasRadio -->
 
     <owl:DatatypeProperty rdf:about="http://www.musicgallery/hasRadio">
@@ -389,6 +395,7 @@
     <owl:NamedIndividual rdf:about="http://www.musicgallery/AllRockTShirts">
         <rdf:type rdf:resource="http://www.musicgallery/Store"/>
         <typeBusiness rdf:resource="http://www.musicgallery/Clothing"/>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loja de venda de camisetas de uma vasta gama de bandas musicais.</description>
         <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">All Rock TShirts</name>
     </owl:NamedIndividual>
     
@@ -434,7 +441,7 @@
         <rdf:type rdf:resource="http://www.musicgallery/TShirt"/>
         <clothSize rdf:resource="http://www.musicgallery/Medium"/>
         <gender rdf:resource="http://www.musicgallery/Female"/>
-        <soldByStore rdf:resource="http://www.musicgallery/AllRockTShirts"/>
+        <soldByStore rdf:resource="http://www.musicgallery/Jarme"/>
         <typeIs rdf:resource="http://www.musicgallery/Clothing"/>
         <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hering</brand>
         <mainColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Preto</mainColor>
@@ -543,6 +550,34 @@
     
 
 
+    <!-- http://www.musicgallery/Jarme -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/Jarme">
+        <rdf:type rdf:resource="http://www.musicgallery/Store"/>
+        <typeBusiness rdf:resource="http://www.musicgallery/Clothing"/>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loja especializada na venda de camisetas simple e de animes.</description>
+        <name>JARME</name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/JoJoTshirt -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/JoJoTshirt">
+        <rdf:type rdf:resource="http://www.musicgallery/TShirt"/>
+        <clothSize rdf:resource="http://www.musicgallery/Medium"/>
+        <gender rdf:resource="http://www.musicgallery/Male"/>
+        <soldByStore rdf:resource="http://www.musicgallery/Jarme"/>
+        <typeIs rdf:resource="http://www.musicgallery/Clothing"/>
+        <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Silk Fabric</brand>
+        <mainColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Preto</mainColor>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camiseta JoJo&apos;s Bizarre Adventures Silk Fabril</name>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">49.95</price>
+        <typeOfFiber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algodão</typeOfFiber>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.musicgallery/KanaBoonTshirt -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/KanaBoonTshirt">
@@ -559,6 +594,23 @@
         <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camiseta KANA-BOON Raglan</name>
         <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">32.95</price>
         <typeOfFiber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algodao</typeOfFiber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/KimetsuTshirt -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/KimetsuTshirt">
+        <rdf:type rdf:resource="http://www.musicgallery/TShirt"/>
+        <clothSize rdf:resource="http://www.musicgallery/Small"/>
+        <gender rdf:resource="http://www.musicgallery/Female"/>
+        <soldByStore rdf:resource="http://www.musicgallery/Jarme"/>
+        <typeIs rdf:resource="http://www.musicgallery/Clothing"/>
+        <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Silk Fabril</brand>
+        <mainColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Preto</mainColor>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camiseta Kimetsu no Yaiba Silk Fabril</name>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">49.95</price>
+        <typeOfFiber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algodão</typeOfFiber>
     </owl:NamedIndividual>
     
 
@@ -609,6 +661,25 @@
     
 
 
+    <!-- http://www.musicgallery/McIguTshirt -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/McIguTshirt">
+        <rdf:type rdf:resource="http://www.musicgallery/BandTShirt"/>
+        <clothSize rdf:resource="http://www.musicgallery/Medium"/>
+        <gender rdf:resource="http://www.musicgallery/Male"/>
+        <soldByStore rdf:resource="http://www.musicgallery/AllRockTShirts"/>
+        <typeIs rdf:resource="http://www.musicgallery/Clothing"/>
+        <band rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MC Igu</band>
+        <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Haze Wear</brand>
+        <mainColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Laranja</mainColor>
+        <musicalGenre rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Trap</musicalGenre>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camiseta do MC Igu Haze Wear</name>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">82.95</price>
+        <typeOfFiber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cotton</typeOfFiber>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.musicgallery/Medium -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/Medium">
@@ -636,11 +707,29 @@
     
 
 
+    <!-- http://www.musicgallery/OnePieceTshirt -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/OnePieceTshirt">
+        <rdf:type rdf:resource="http://www.musicgallery/TShirt"/>
+        <clothSize rdf:resource="http://www.musicgallery/Medium"/>
+        <gender rdf:resource="http://www.musicgallery/Male"/>
+        <soldByStore rdf:resource="http://www.musicgallery/Jarme"/>
+        <typeIs rdf:resource="http://www.musicgallery/Clothing"/>
+        <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Silk Fabril</brand>
+        <mainColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Preto</mainColor>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camiseta One Piece Silk Fabril</name>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">34.99</price>
+        <typeOfFiber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algodão</typeOfFiber>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.musicgallery/PierreInstrumentosMusicais -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/PierreInstrumentosMusicais">
         <rdf:type rdf:resource="http://www.musicgallery/Store"/>
         <typeBusiness rdf:resource="http://www.musicgallery/MusicalEquipment"/>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loja de artigos e intrumentos musicais de alta qualidade, priorizando o atendimento e satisfação do cliente.</description>
         <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pierre Instrumentos Musicais</name>
     </owl:NamedIndividual>
     
@@ -671,6 +760,7 @@
     <owl:NamedIndividual rdf:about="http://www.musicgallery/RockPlanet">
         <rdf:type rdf:resource="http://www.musicgallery/Store"/>
         <typeBusiness rdf:resource="http://www.musicgallery/MusicalMedia"/>
+        <description rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Loja de venda de discos e vitrolas de todos os preços que possuem rádio, bluetooth, usb, entrada de cartões de memória e muito mais.</description>
         <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Rock Planet</name>
     </owl:NamedIndividual>
     
@@ -842,7 +932,7 @@
         <rdf:type rdf:resource="http://www.musicgallery/TShirt"/>
         <clothSize rdf:resource="http://www.musicgallery/ExtraLarge"/>
         <gender rdf:resource="http://www.musicgallery/Male"/>
-        <soldByStore rdf:resource="http://www.musicgallery/AllRockTShirts"/>
+        <soldByStore rdf:resource="http://www.musicgallery/Jarme"/>
         <typeIs rdf:resource="http://www.musicgallery/Clothing"/>
         <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hering</brand>
         <mainColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branco</mainColor>
@@ -880,7 +970,7 @@
         <rdf:type rdf:resource="http://www.musicgallery/TShirt"/>
         <clothSize rdf:resource="http://www.musicgallery/Large"/>
         <gender rdf:resource="http://www.musicgallery/Male"/>
-        <soldByStore rdf:resource="http://www.musicgallery/AllRockTShirts"/>
+        <soldByStore rdf:resource="http://www.musicgallery/Jarme"/>
         <typeIs rdf:resource="http://www.musicgallery/Clothing"/>
         <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Oakley</brand>
         <mainColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Branco</mainColor>

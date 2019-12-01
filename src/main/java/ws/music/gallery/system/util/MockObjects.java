@@ -20,18 +20,21 @@ public class MockObjects {
             .name("All Rock TShirts")
             .typeBusiness(TypeProductAndBusiness.CLOTHING)
             .URI(MUSIC_URI + "AllRockTshirts")
+            .description("GENERICO")
             .build();
 
     public StoreDTO mockStore1 = StoreDTO.builder()
             .name("Pierre Instrumentos Musicais")
             .typeBusiness(TypeProductAndBusiness.MUSICAL_EQUIPMENT)
             .URI(MUSIC_URI + "PierreInstrumentosMusicais")
+            .description("GENERICO")
             .build();
 
     public StoreDTO mockStore2 = StoreDTO.builder()
             .name("Rock Planet")
             .typeBusiness(TypeProductAndBusiness.MUSICAL_MEDIA)
             .URI(MUSIC_URI + "RockPlanet")
+            .description("GENERICO")
             .build();
 
     public ProductDTO mockProduct = ProductDTO.builder()
