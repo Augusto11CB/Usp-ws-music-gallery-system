@@ -2,7 +2,6 @@ package ws.music.gallery.system.controller;
 
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,17 +38,17 @@ public class ProductsController {
         return Arrays.asList(mockObject.mockProduct, mockObject.mockThirt1, mockObject.mockThirt2);
     }
 
-    @ApiOperation(value = "Get all products available in a store", response = ProductDTO.class, responseContainer = "List")
-    @GetMapping("/get-products/{store-name}/")
-    public List<ProductDTO> getProducstOfStore(@PathVariable(value = "store-name") String storeName) {
-//        return productService.getAllProductsOfStore(storeName);
-        return Arrays.asList(mockObject.mockProduct, mockObject.mockThirt1, mockObject.mockThirt2);
-    }
-
     @ApiOperation(value = "Get product of a certain type", response = ProductDTO.class, responseContainer = "List", notes = "See Types Available")
     @GetMapping("/get-products/{product-type}")
     public List<ProductDTO> getProducstOfType(@PathVariable(value = "product-type") TypeProductAndBusiness productType) {
 //        return productService.getProductsByType(productType);
+        return Arrays.asList(mockObject.mockProduct, mockObject.mockThirt1, mockObject.mockThirt2);
+    }
+
+    @ApiOperation(value = "Get all products available in a store", response = ProductDTO.class, responseContainer = "List")
+    @GetMapping("/get-products/store/{store-name}/")
+    public List<ProductDTO> getProducstOfStore(@PathVariable(value = "store-name") String storeName) {
+//        return productService.getAllProductsOfStore(storeName);
         return Arrays.asList(mockObject.mockProduct, mockObject.mockThirt1, mockObject.mockThirt2);
     }
 
@@ -69,13 +68,13 @@ public class ProductsController {
         BandTShirtDTO bandTShirtDTO = BandTShirtDTO.builder()
                 .band("Scorpions")
                 .musicalGenre("rock")
-                .size(ClothSize.P)
+                .size(ClothSize.SMALL)
                 .designatedGender(Gender.MALE)
                 .mainColor("white")
                 .typeOfFiber("Jeans")
                 .name("Tshirt scorpinos nice")
                 .typeProductAndBusiness(TypeProductAndBusiness.CLOTHING)
-                .branch("scorpions")
+                .brand("scorpions")
                 .price(120)
                 .soldByStore(pierreInstrumentosMusicais)
                 .build();
@@ -85,7 +84,7 @@ public class ProductsController {
                 .hasRadio(false)
                 .voltage(120)
                 .typeProductAndBusiness(TypeProductAndBusiness.MUSICAL_EQUIPMENT)
-                .branch("Phillips")
+                .brand("Phillips")
                 .price(601)
                 .soldByStore(allRockTshirts)
                 .build();

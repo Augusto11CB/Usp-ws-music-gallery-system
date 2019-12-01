@@ -18,6 +18,7 @@ import ws.music.gallery.system.service.RecommendationService;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 /*
  * Send stores that user already bought some thing
@@ -38,7 +39,7 @@ public class RecommendationServiceImpl implements RecommendationService {
     ProductService productService;
 
     @Override
-    public List<ProductDTO> recommendProducsSameTypeLastPurchases(String userCPF) throws NothingToRecommendException, UserNotFoundException{
+    public List<ProductDTO> recommendProducsSameTypeLastPurchases(String userCPF) throws NothingToRecommendException, UserNotFoundException {
 
         List<ProductDTO> recommendations = new ArrayList<>(Collections.emptyList());
 
@@ -49,10 +50,10 @@ public class RecommendationServiceImpl implements RecommendationService {
         List<UserPurchase> userPurchases = userPurchaseRepository.findTypesForRecommendation(user, pageable)
                 .orElseThrow(() -> new NothingToRecommendException("Sem recomendações"));
 
-        List<TypeProductAndBusiness> typesToLookingFor = userPurchases.stream().map(UserPurchase::getProductType).collect(Collectors.toList());
+        List<TypeProductAndBusiness> typesToLookingFor = userPurchases.stream().map(UserPurchase::getProductType).distinct().collect(Collectors.toList());
         typesToLookingFor.forEach(type -> recommendations.addAll(productService.getProductsByType(type)));
 
-        return recommendations;
+        return recommendations.stream().filter(reco -> Objects.nonNull(reco)).collect(Collectors.toList());
     }
 
 }

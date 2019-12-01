@@ -24,20 +24,22 @@ public class ProductServiceImpl implements ProductService {
     private String MUSIC_GALLERY_URI;
 
     private StoreOntologyRepository storeOntologyRepository;
-
-
     private ProductOntologyRepository productOntologyRepository;
-
-
     private ProductOntologyEntitiesConverter productConverter;
+    private VynlOntologyEntitiesConverter vynlOntologyEntitiesConverter;
+    private TShirtOntologyEntitiesConverter tShirtOntologyEntitiesConverter;
 
 
     public ProductServiceImpl(
             StoreOntologyRepository storeOntologyRepository,
-            ProductOntologyRepository productOntologyRepository
+            ProductOntologyRepository productOntologyRepository,
+            VynlOntologyEntitiesConverter vynlOntologyEntitiesConverter,
+            TShirtOntologyEntitiesConverter tShirtOntologyEntitiesConverter
     ) {
         this.storeOntologyRepository = storeOntologyRepository;
         this.productOntologyRepository = productOntologyRepository;
+        this.vynlOntologyEntitiesConverter = vynlOntologyEntitiesConverter;
+        this.tShirtOntologyEntitiesConverter = tShirtOntologyEntitiesConverter;
         this.productConverter = this.buildChainOfConversion();
         //TODO verify why we couldn't read values from applications.properties from the constructor
     }
@@ -66,7 +68,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductDTO> getProductsByType(TypeProductAndBusiness type) {
-
+        System.out.println(type);
         Resource productType = new ResourceImpl(MUSIC_GALLERY_URI + type.getValue());
 
         List<Resource> indvList = productOntologyRepository.getAllProductsByType(productType);
@@ -85,9 +87,10 @@ public class ProductServiceImpl implements ProductService {
     }
 
     private ProductOntologyEntitiesConverter buildChainOfConversion() {
-        return new TShirtOntologyEntitiesConverter()
+        tShirtOntologyEntitiesConverter
                 .linkWith(new MusicalInstrumentOntologyEntitiesConverter()
                         .linkWith(new RecordPlayerOntologyEntitiesConverter()
                                 .linkWith(new VynlOntologyEntitiesConverter())));
+        return tShirtOntologyEntitiesConverter;
     }
 }

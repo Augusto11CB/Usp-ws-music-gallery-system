@@ -35,7 +35,7 @@ public class MockObjects {
             .build();
 
     public ProductDTO mockProduct = ProductDTO.builder()
-            .branch("Hering")
+            .brand("Hering")
             .price(30.50)
             .URI(MUSIC_URI)
             .name("Camiseta Preta")
@@ -45,12 +45,12 @@ public class MockObjects {
 
     public TShirtDTO mockThirt1 = TShirtDTO.builder()
             .designatedGender(Gender.MALE)
-            .branch("Levis")
+            .brand("Levis")
             .soldByStore(mockStore)
             .price(80)
             .URI(MUSIC_URI)
             .typeProductAndBusiness(TypeProductAndBusiness.CLOTHING)
-            .size(ClothSize.P)
+            .size(ClothSize.SMALL)
             .name("Camiseta Branca")
             .mainColor("Branca")
             .typeOfFiber("Algodão")
@@ -58,12 +58,12 @@ public class MockObjects {
 
     public TShirtDTO mockThirt2 = TShirtDTO.builder()
             .designatedGender(Gender.MALE)
-            .branch("Renner")
+            .brand("Renner")
             .soldByStore(mockStore)
             .price(180)
             .URI(MUSIC_URI)
             .typeProductAndBusiness(TypeProductAndBusiness.CLOTHING)
-            .size(ClothSize.P)
+            .size(ClothSize.MEDIUM)
             .name("Camisa Polo")
             .mainColor("Azul")
             .typeOfFiber("Algodão")

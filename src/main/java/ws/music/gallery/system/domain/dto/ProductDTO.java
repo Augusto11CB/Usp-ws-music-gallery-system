@@ -14,7 +14,7 @@ public class ProductDTO {
 
     private String name;
     private TypeProductAndBusiness typeProductAndBusiness;
-    private String branch;
+    private String brand;
     private double price;
     private StoreDTO soldByStore;
     private String URI;

@@ -7,10 +7,10 @@ import lombok.Getter;
 @Getter
 public enum ClothSize {
 
-    P("PEQUENO"),
-    M("MÉDIO"),
-    G("GRANDE"),
-    XG("EXTRA GRANDE");
+    SMALL("PEQUENO"),
+    MEDIUM("MÉDIO"),
+    LARGE("GRANDE"),
+    EXTRALARGE("EXTRA GRANDE");
 
     private String value;
 }
