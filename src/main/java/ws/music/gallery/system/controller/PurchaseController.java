@@ -23,8 +23,8 @@ public class PurchaseController {
     public void performPurchase(
             @RequestBody(required = true) List<ProductDTO> purchasedProducts,
             @RequestParam(required = true, name = "cpf") String cpf,
-            @RequestParam(name = "gender") Gender gender,
-            @RequestParam(name = "age") int age
+            @RequestParam(name = "gender", required = false) Gender gender,
+            @RequestParam(name = "age", required = false) int age
 
     ) {
 
