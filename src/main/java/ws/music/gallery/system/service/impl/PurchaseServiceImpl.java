@@ -30,9 +30,13 @@ public class PurchaseServiceImpl implements PurchaseService {
     @Override
     public void performPurchase(List<ProductDTO> purchasedProducts, String cpf, Gender gender, int age)
             throws UserNotFoundException {
-        User user = userRepository.findByCpfUser(cpf)
-                .orElse(userRepository.save(getUser(cpf, gender, age)));
 
+        System.out.println(userRepository.findByCpfUser(cpf).isPresent());
+
+        User user = userRepository.findByCpfUser(cpf)
+                .orElse(null);
+
+        System.out.println(user);
         purchasedProducts.forEach(productDTO -> this.persistPurchase(productDTO, user));
     }
 

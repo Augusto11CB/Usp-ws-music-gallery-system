@@ -33,8 +33,8 @@ public class UserPurchase {
     @Column(name = "PURCHASE_DATE", nullable = false)
     private LocalDate purchaseDate;
 
-    @ManyToOne(optional = false)
-    @JoinColumn(name="ID_USER")
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name="ID_USER", nullable = false)
     private User user;
 
 }
