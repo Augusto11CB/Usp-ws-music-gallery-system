@@ -4,11 +4,13 @@ import org.apache.jena.ontology.Individual;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.rdf.model.impl.ResourceImpl;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import ws.music.gallery.system.converter.StoreOntologyEntitiesConverter;
 import ws.music.gallery.system.repository.ontologyrepo.MusicGalleryOntologyRepository;
 import ws.music.gallery.system.repository.ontologyrepo.StoreOntologyRepository;
+import ws.music.gallery.system.util.OntologyPropertyAndResourceUtils;
 
 import java.util.Comparator;
 import java.util.Iterator;
@@ -38,15 +40,13 @@ public class StoreOntologyRepositoryImpl implements StoreOntologyRepository {
         this.musicGalleryOntologyRepository = musicGalleryOntologyRepository;
         this.musicGalleryOntologyModel = musicGalleryOntologyModel;
         this.individualAndDTOStoreConverter = individualAndDTOStoreConverter;
-        this.storeResourceDef = musicGalleryOntologyModel.createResource(MUSIC_GALLERY_URI + "Store");
-        this.typeBusinessProp = musicGalleryOntologyModel.createProperty(MUSIC_GALLERY_URI + "typeBusiness");
+        this.storeResourceDef = new ResourceImpl(OntologyPropertyAndResourceUtils.store);
+        this.typeBusinessProp = OntologyPropertyAndResourceUtils.typeBusiness;
     }
 
     @Override
     public Resource getStore(String storeName) {
-
-
-        return null;
+        return musicGalleryOntologyModel.getResource(MUSIC_GALLERY_URI + storeName);
     }
 
     @Override

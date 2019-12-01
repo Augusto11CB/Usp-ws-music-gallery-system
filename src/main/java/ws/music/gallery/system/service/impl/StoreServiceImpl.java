@@ -44,7 +44,7 @@ public class StoreServiceImpl implements StoreService {
 
         List<Individual> individualsList = storeOntologyRepository.getAllStores();
         List<StoreDTO> storeDTOList = individualsList.stream().map(indv ->
-                storeConverter.individualToStoreDTO(indv)).collect(Collectors.toList());
+                storeConverter.resourceToStoreDTO(indv)).collect(Collectors.toList());
 
         return storeDTOList;
 

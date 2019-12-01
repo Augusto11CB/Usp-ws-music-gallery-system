@@ -30,7 +30,7 @@ public class StoreOntologyEntitiesConverter {
 
         return StoreDTO.builder()
                 .name(storeIndividual.getProperty(OntologyPropertyAndResourceUtils.name).getLiteral().getValue().toString())
-                .typeBusiness(TypeProductAndBusiness.valueOf(storeIndividual.getProperty(OntologyPropertyAndResourceUtils.typeBusiness).getResource().getLocalName()))
+                .typeBusiness(TypeProductAndBusiness.getEnum(storeIndividual.getProperty(OntologyPropertyAndResourceUtils.typeBusiness).getResource().getLocalName()))
                 .URI(storeIndividual.getURI())
                 .build();
     }

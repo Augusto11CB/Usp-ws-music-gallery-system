@@ -12,11 +12,9 @@ import ws.music.gallery.system.enums.TypeProductAndBusiness;
 import ws.music.gallery.system.service.StoreService;
 import ws.music.gallery.system.util.MockObjects;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /*
 *
@@ -44,19 +42,19 @@ public class StoresController {
     @GetMapping("/get-all")
     public List<StoreDTO> getStores() {
 
-//       return storeService.getAllStores();
-        return Arrays.asList(mockObject.mockStore, mockObject.mockStore1, mockObject.mockStore2);
+        return storeService.getAllStores();
+//        return Arrays.asList(mockObject.mockStore, mockObject.mockStore1, mockObject.mockStore2);
     }
 
     @ApiOperation(value = "Return all stores in the Music Gallery in alphabetic order", response = StoreDTO.class, responseContainer = "List")
     @GetMapping("/get-all/order-by-name")
     public List<StoreDTO> getStoresOrderByName() {
 
-//        return storeService.getAllStoresOrderByName();
-        List<StoreDTO> list = Arrays.asList(mockObject.mockStore, mockObject.mockStore1, mockObject.mockStore2);
-        list.sort((p1, p2) -> p1.getName().compareToIgnoreCase(p2.getName()));
+        return storeService.getAllStoresOrderByName();
+        //      List<StoreDTO> list = Arrays.asList(mockObject.mockStore, mockObject.mockStore1, mockObject.mockStore2);
+        //    list.sort((p1, p2) -> p1.getName().compareToIgnoreCase(p2.getName()));
 
-        return list;
+        //  return list;
     }
 
     @ApiOperation(value = "Get stores in the Music Gallery of a certain type", response = StoreDTO.class, responseContainer = "List")
@@ -64,9 +62,8 @@ public class StoresController {
     public List<StoreDTO> getStoresByBusinessType(
             @RequestParam(name = "type", required = true) TypeProductAndBusiness type) {
 
-        //return storeService.getStoresByBusinessType(type);
-        List<StoreDTO> list = Arrays.asList(mockObject.mockStore, mockObject.mockStore1, mockObject.mockStore2);
-        return list.stream().filter(store -> store.getTypeBusiness().equals(type)).collect(Collectors.toList());
+        return storeService.getStoresByBusinessType(type);
+//        List<StoreDTO> list = Arrays.asList(mockObject.mockStore, mockObject.mockStore1, mockObject.mockStore2);return list.stream().filter(store -> store.getTypeBusiness().equals(type)).collect(Collectors.toList());
     }
 
     @ApiIgnore

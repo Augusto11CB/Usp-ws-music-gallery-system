@@ -39,5 +39,6 @@ public class OntologyPropertyAndResourceUtils {
     public static String recordPlayer = MUSIC_GALLERY_URI +  "RecordPlayer";
     public static String musicalInstrument = MUSIC_GALLERY_URI +  "MusicalInstrument";
     public static String vynl = MUSIC_GALLERY_URI +  "Vynl";
+    public static String store = MUSIC_GALLERY_URI +  "Store";
 
 }
