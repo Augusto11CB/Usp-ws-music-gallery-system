@@ -58,7 +58,7 @@ public class StoresController {
     }
 
     @ApiOperation(value = "Get stores in the Music Gallery of a certain type", response = StoreDTO.class, responseContainer = "List")
-    @GetMapping("/get-stores-of-type/")
+    @GetMapping("/get-stores-of-type")
     public List<StoreDTO> getStoresByBusinessType(
             @RequestParam(name = "type", required = true) TypeProductAndBusiness type) {
 
