@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import ws.music.gallery.system.domain.User;
 import ws.music.gallery.system.domain.UserPurchase;
 import ws.music.gallery.system.domain.dto.ProductDTO;
-import ws.music.gallery.system.domain.dto.UserDTO;
+import ws.music.gallery.system.enums.Gender;
 import ws.music.gallery.system.exception.UserNotFoundException;
 import ws.music.gallery.system.repository.UserPurchaseRepository;
 import ws.music.gallery.system.repository.UserRepository;
@@ -28,11 +28,21 @@ public class PurchaseServiceImpl implements PurchaseService {
     ModelMapper modelMapper;
 
     @Override
-    public void performPurchase(List<ProductDTO> purchasedProducts, UserDTO userDTO) throws UserNotFoundException {
-        User user = userRepository.findByCpfUser(userDTO.getCpfUser())
-                .orElse(userRepository.save(modelMapper.map(userDTO, User.class)));
+    public void performPurchase(List<ProductDTO> purchasedProducts, String cpf, Gender gender, int age)
+            throws UserNotFoundException {
+        User user = userRepository.findByCpfUser(cpf)
+                .orElse(userRepository.save(getUser(cpf, gender, age)));
 
         purchasedProducts.forEach(productDTO -> this.persistPurchase(productDTO, user));
+    }
+
+    private User getUser(String cpf, Gender gender, int age) {
+        return User.builder()
+                .cpfUser(cpf)
+                .age(age)
+                .gender(gender)
+                .idUser(0l)
+                .build();
     }
 
     private void persistPurchase(ProductDTO productDTO, User user) {
