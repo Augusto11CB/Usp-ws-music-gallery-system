@@ -371,6 +371,7 @@
     <!-- http://www.musicgallery/ARevoltaDosDandis -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/ARevoltaDosDandis">
+        <rdf:type rdf:resource="http://www.musicgallery/Product"/>
         <rdf:type rdf:resource="http://www.musicgallery/Vynl"/>
         <soldByStore rdf:resource="http://www.musicgallery/RockPlanet"/>
         <typeIs rdf:resource="http://www.musicgallery/MusicalMedia"/>
@@ -409,6 +410,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/BeeGeesTshirt">
         <rdf:type rdf:resource="http://www.musicgallery/BandTShirt"/>
+        <rdf:type rdf:resource="http://www.musicgallery/Product"/>
         <boughtByUser rdf:resource="http://www.musicgallery/Augusto"/>
         <clothSize rdf:resource="http://www.musicgallery/Small"/>
         <gender rdf:resource="http://www.musicgallery/Male"/>
@@ -428,6 +430,7 @@
     <!-- http://www.musicgallery/BlackTshirt -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/BlackTshirt">
+        <rdf:type rdf:resource="http://www.musicgallery/Product"/>
         <rdf:type rdf:resource="http://www.musicgallery/TShirt"/>
         <clothSize rdf:resource="http://www.musicgallery/Medium"/>
         <gender rdf:resource="http://www.musicgallery/Female"/>
@@ -445,6 +448,7 @@
     <!-- http://www.musicgallery/CloseToTheEdge -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/CloseToTheEdge">
+        <rdf:type rdf:resource="http://www.musicgallery/Product"/>
         <rdf:type rdf:resource="http://www.musicgallery/Vynl"/>
         <soldByStore rdf:resource="http://www.musicgallery/RockPlanet"/>
         <typeIs rdf:resource="http://www.musicgallery/MusicalMedia"/>
@@ -469,6 +473,7 @@
     <!-- http://www.musicgallery/ComfortableTShirt -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/ComfortableTShirt">
+        <rdf:type rdf:resource="http://www.musicgallery/Product"/>
         <rdf:type rdf:resource="http://www.musicgallery/TShirt"/>
         <boughtByUser rdf:resource="http://www.musicgallery/Maria"/>
         <clothSize rdf:resource="http://www.musicgallery/Medium"/>
@@ -488,6 +493,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/ElectricGuitar">
         <rdf:type rdf:resource="http://www.musicgallery/MusicalInstrument"/>
+        <rdf:type rdf:resource="http://www.musicgallery/Product"/>
         <soldByStore rdf:resource="http://www.musicgallery/PierreInstrumentosMusicais"/>
         <typeIs rdf:resource="http://www.musicgallery/MusicalEquipment"/>
         <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yamaha</brand>
@@ -521,6 +527,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/GIdleTshirt">
         <rdf:type rdf:resource="http://www.musicgallery/BandTShirt"/>
+        <rdf:type rdf:resource="http://www.musicgallery/Product"/>
         <clothSize rdf:resource="http://www.musicgallery/Small"/>
         <gender rdf:resource="http://www.musicgallery/Female"/>
         <soldByStore rdf:resource="http://www.musicgallery/AllRockTShirts"/>
@@ -540,6 +547,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/KanaBoonTshirt">
         <rdf:type rdf:resource="http://www.musicgallery/BandTShirt"/>
+        <rdf:type rdf:resource="http://www.musicgallery/Product"/>
         <clothSize rdf:resource="http://www.musicgallery/Medium"/>
         <gender rdf:resource="http://www.musicgallery/Female"/>
         <soldByStore rdf:resource="http://www.musicgallery/AllRockTShirts"/>
@@ -558,6 +566,7 @@
     <!-- http://www.musicgallery/KissLoveGun1997 -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/KissLoveGun1997">
+        <rdf:type rdf:resource="http://www.musicgallery/Product"/>
         <rdf:type rdf:resource="http://www.musicgallery/Vynl"/>
         <soldByStore rdf:resource="http://www.musicgallery/RockPlanet"/>
         <typeIs rdf:resource="http://www.musicgallery/MusicalMedia"/>
@@ -641,6 +650,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/RedHotTshirt">
         <rdf:type rdf:resource="http://www.musicgallery/BandTShirt"/>
+        <rdf:type rdf:resource="http://www.musicgallery/Product"/>
         <clothSize rdf:resource="http://www.musicgallery/Small"/>
         <gender rdf:resource="http://www.musicgallery/Female"/>
         <soldByStore rdf:resource="http://www.musicgallery/AllRockTShirts"/>
@@ -694,6 +704,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/Theremin">
         <rdf:type rdf:resource="http://www.musicgallery/MusicalInstrument"/>
+        <rdf:type rdf:resource="http://www.musicgallery/Product"/>
         <soldByStore rdf:resource="http://www.musicgallery/PierreInstrumentosMusicais"/>
         <typeIs rdf:resource="http://www.musicgallery/MusicalEquipment"/>
         <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Etherwave</brand>
@@ -709,6 +720,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/UprightPiano">
         <rdf:type rdf:resource="http://www.musicgallery/MusicalInstrument"/>
+        <rdf:type rdf:resource="http://www.musicgallery/Product"/>
         <soldByStore rdf:resource="http://www.musicgallery/PierreInstrumentosMusicais"/>
         <typeIs rdf:resource="http://www.musicgallery/MusicalEquipment"/>
         <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yamaha</brand>
@@ -724,6 +736,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/Violin">
         <rdf:type rdf:resource="http://www.musicgallery/MusicalInstrument"/>
+        <rdf:type rdf:resource="http://www.musicgallery/Product"/>
         <soldByStore rdf:resource="http://www.musicgallery/PierreInstrumentosMusicais"/>
         <typeIs rdf:resource="http://www.musicgallery/MusicalEquipment"/>
         <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lai</brand>
@@ -738,6 +751,7 @@
     <!-- http://www.musicgallery/VitrolaPhillips -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/VitrolaPhillips">
+        <rdf:type rdf:resource="http://www.musicgallery/Product"/>
         <rdf:type rdf:resource="http://www.musicgallery/RecordPlayer"/>
         <soldByStore rdf:resource="http://www.musicgallery/PierreInstrumentosMusicais"/>
         <soldByStore rdf:resource="http://www.musicgallery/RockPlanet"/>
@@ -755,6 +769,7 @@
     <!-- http://www.musicgallery/VitrolaRaveoOpera -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/VitrolaRaveoOpera">
+        <rdf:type rdf:resource="http://www.musicgallery/Product"/>
         <rdf:type rdf:resource="http://www.musicgallery/RecordPlayer"/>
         <soldByStore rdf:resource="http://www.musicgallery/RockPlanet"/>
         <typeIs rdf:resource="http://www.musicgallery/MusicalEquipment"/>
@@ -771,6 +786,7 @@
     <!-- http://www.musicgallery/VitrolaRaveoSonetto -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/VitrolaRaveoSonetto">
+        <rdf:type rdf:resource="http://www.musicgallery/Product"/>
         <rdf:type rdf:resource="http://www.musicgallery/RecordPlayer"/>
         <boughtByUser rdf:resource="http://www.musicgallery/Maria"/>
         <soldByStore rdf:resource="http://www.musicgallery/PierreInstrumentosMusicais"/>
@@ -788,6 +804,7 @@
     <!-- http://www.musicgallery/VitrolaSuperboxUitech -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/VitrolaSuperboxUitech">
+        <rdf:type rdf:resource="http://www.musicgallery/Product"/>
         <rdf:type rdf:resource="http://www.musicgallery/RecordPlayer"/>
         <soldByStore rdf:resource="http://www.musicgallery/PierreInstrumentosMusicais"/>
         <typeIs rdf:resource="http://www.musicgallery/MusicalEquipment"/>
@@ -804,6 +821,7 @@
     <!-- http://www.musicgallery/VitrolaWoodburnTabaco -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/VitrolaWoodburnTabaco">
+        <rdf:type rdf:resource="http://www.musicgallery/Product"/>
         <rdf:type rdf:resource="http://www.musicgallery/RecordPlayer"/>
         <soldByStore rdf:resource="http://www.musicgallery/RockPlanet"/>
         <typeIs rdf:resource="http://www.musicgallery/MusicalEquipment"/>
@@ -820,6 +838,7 @@
     <!-- http://www.musicgallery/WhiteTshirt -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/WhiteTshirt">
+        <rdf:type rdf:resource="http://www.musicgallery/Product"/>
         <rdf:type rdf:resource="http://www.musicgallery/TShirt"/>
         <clothSize rdf:resource="http://www.musicgallery/ExtraLarge"/>
         <gender rdf:resource="http://www.musicgallery/Male"/>
@@ -838,6 +857,7 @@
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/YesTshirt">
         <rdf:type rdf:resource="http://www.musicgallery/BandTShirt"/>
+        <rdf:type rdf:resource="http://www.musicgallery/Product"/>
         <clothSize rdf:resource="http://www.musicgallery/Large"/>
         <gender rdf:resource="http://www.musicgallery/Male"/>
         <soldByStore rdf:resource="http://www.musicgallery/AllRockTShirts"/>
@@ -856,6 +876,7 @@
     <!-- http://www.musicgallery/ZikaTshirt -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/ZikaTshirt">
+        <rdf:type rdf:resource="http://www.musicgallery/Product"/>
         <rdf:type rdf:resource="http://www.musicgallery/TShirt"/>
         <clothSize rdf:resource="http://www.musicgallery/Large"/>
         <gender rdf:resource="http://www.musicgallery/Male"/>

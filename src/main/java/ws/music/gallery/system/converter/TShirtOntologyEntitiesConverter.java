@@ -73,7 +73,7 @@ public class TShirtOntologyEntitiesConverter extends ProductOntologyEntitiesConv
     }
 
     public ProductDTO resourceToProductDTO(Resource productResource) {
-        
+
         System.out.println("TShirt resourceToProductDTO:" + productResource);
 
         Resource storeResource = productResource.getProperty(OntologyPropertyAndResourceUtils.soldByStore).getResource();

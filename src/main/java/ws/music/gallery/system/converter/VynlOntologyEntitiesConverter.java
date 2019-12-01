@@ -74,12 +74,13 @@ public class VynlOntologyEntitiesConverter extends ProductOntologyEntitiesConver
         System.out.println(productResource.hasProperty(RDF.type, vynls));
         //System.out.println(productResource.has(productResource);
 
-        Resource storeResource = productResource.getProperty(OntologyPropertyAndResourceUtils.soldByStore).getResource();
-        StoreDTO storeDTO = storeOntologyEntitiesConverter.resourceToStoreDTO(storeResource);
+
 
 
         if (productResource.hasProperty(RDF.type, vynls)) {
 
+            Resource storeResource = productResource.getProperty(OntologyPropertyAndResourceUtils.soldByStore).getResource();
+            StoreDTO storeDTO = storeOntologyEntitiesConverter.resourceToStoreDTO(storeResource);
             return VynlDTO.builder()
                     .name(productResource.getProperty(OntologyPropertyAndResourceUtils.name).getLiteral().getValue().toString())
                     .typeProductAndBusiness(TypeProductAndBusiness.getEnum(productResource.getProperty(OntologyPropertyAndResourceUtils.typeIs).getResource().getLocalName().toUpperCase()))

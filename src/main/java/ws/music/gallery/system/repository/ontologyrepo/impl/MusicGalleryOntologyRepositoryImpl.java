@@ -6,29 +6,30 @@ import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.RDFNode;
 import org.apache.jena.rdf.model.ResIterator;
 import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.rdf.model.impl.ResourceImpl;
 import org.apache.jena.util.iterator.ExtendedIterator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import ws.music.gallery.system.repository.ontologyrepo.MusicGalleryOntologyRepository;
+import ws.music.gallery.system.util.OntologyPropertyAndResourceUtils;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 @Repository
 public class MusicGalleryOntologyRepositoryImpl implements MusicGalleryOntologyRepository {
 
     @Autowired
-    OntModel musicGalleryOntologyModel = null;
+    OntModel musicGalleryOntologyModel;
 
     public List<Individual> getAllResources(Resource resource) {
-        List<Individual> indvList = Collections.emptyList();
+        ArrayList<Individual> indvList = new ArrayList<>();
         ExtendedIterator<Individual> iterator;
         iterator = musicGalleryOntologyModel.listIndividuals(resource);
 
         iterator.forEachRemaining(individual ->
                 indvList.add(individual));
-
+        iterator.forEachRemaining(System.out::println);
 
         return indvList;
     }

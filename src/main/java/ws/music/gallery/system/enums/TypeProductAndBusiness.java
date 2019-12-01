@@ -15,7 +15,8 @@ public enum TypeProductAndBusiness {
     private String value;
 
     public static TypeProductAndBusiness getEnum(String value) {
-        return Arrays.stream(TypeProductAndBusiness.values()).filter(x -> x.getValue().equals(value)).findFirst().orElse(null);
+        System.out.println("Enum" + value);
+        return Arrays.stream(TypeProductAndBusiness.values()).filter(x -> x.getValue().toUpperCase().equals(value)).findFirst().orElse(null);
     }
 
 }
