@@ -14,6 +14,7 @@ import ws.music.gallery.system.service.PurchaseService;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class PurchaseServiceImpl implements PurchaseService {
@@ -32,20 +33,21 @@ public class PurchaseServiceImpl implements PurchaseService {
             throws UserNotFoundException {
 
         System.out.println(userRepository.findByCpfUser(cpf).isPresent());
-
-        User user = userRepository.findByCpfUser(cpf)
-                .orElse(null);
+        if(!userRepository.findByCpfUser(cpf).isPresent()){
+            userRepository.save(getUser(cpf,gender,age));
+        }
+        User user = userRepository.findByCpfUser(cpf).get();
 
         System.out.println(user);
         purchasedProducts.forEach(productDTO -> this.persistPurchase(productDTO, user));
     }
 
     private User getUser(String cpf, Gender gender, int age) {
+        int newAge = Objects.nonNull(age) ? age : 0;
         return User.builder()
                 .cpfUser(cpf)
-                .age(age)
+                .age(newAge)
                 .gender(gender)
-                .idUser(0l)
                 .build();
     }
 
