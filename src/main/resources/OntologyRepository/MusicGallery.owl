@@ -571,7 +571,7 @@
         <typeIs rdf:resource="http://www.musicgallery/Clothing"/>
         <brand rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Silk Fabric</brand>
         <mainColor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Preto</mainColor>
-        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camiseta JoJo&apos;s Bizarre Adventures Silk Fabril</name>
+        <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camiseta JoJos Bizarre Adventures Silk Fabril</name>
         <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">49.95</price>
         <typeOfFiber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algodão</typeOfFiber>
     </owl:NamedIndividual>
