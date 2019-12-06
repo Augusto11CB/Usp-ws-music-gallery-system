@@ -14,6 +14,7 @@ import ws.music.gallery.system.service.ProductService;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 
@@ -57,8 +58,10 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductDTO> getAllProducts() {
 
         List<Individual> indvList = productOntologyRepository.getAllProducts();
-        List<ProductDTO> productDTOList = indvList.stream().map(indv ->
-                productConverter.resourceToProductDTO(indv)).collect(Collectors.toList());
+        List<ProductDTO> productDTOList = indvList.stream()
+                .map(indv -> productConverter.resourceToProductDTO(indv))
+                .map(resource -> this.setQuantity(resource))
+                .collect(Collectors.toList());
 
         return productDTOList;
     }
@@ -68,8 +71,10 @@ public class ProductServiceImpl implements ProductService {
 
         Resource store = storeOntologyRepository.getStore(storeName);
         List<Resource> indvList = productOntologyRepository.getAllProductsOfStore(store);
-        List<ProductDTO> productDTOList = indvList.stream().map(indv ->
-                productConverter.resourceToProductDTO(indv)).collect(Collectors.toList());
+        List<ProductDTO> productDTOList = indvList.stream()
+                .map(indv -> productConverter.resourceToProductDTO(indv))
+                .map(resource -> this.setQuantity(resource))
+                .collect(Collectors.toList());
 
         return productDTOList;
     }
@@ -82,8 +87,10 @@ public class ProductServiceImpl implements ProductService {
         List<Resource> indvList = productOntologyRepository.getAllProductsByType(productType);
         indvList.forEach(System.out::println);// TODO Until here works fine!!
 
-        List<ProductDTO> productDTOList = indvList.stream().map(indv ->
-                productConverter.resourceToProductDTO(indv)).collect(Collectors.toList());
+        List<ProductDTO> productDTOList = indvList.stream()
+                .map(indv -> productConverter.resourceToProductDTO(indv))
+                .map(resource -> this.setQuantity(resource))
+                .collect(Collectors.toList());
 
         return productDTOList;
     }
@@ -97,8 +104,14 @@ public class ProductServiceImpl implements ProductService {
     private ProductOntologyEntitiesConverter buildChainOfConversion() {
         tShirtOntologyEntitiesConverter
                 .linkWith(musicalInstrumentOntologyEntitiesConverter)
-                    .linkWith(recordPlayerOntologyEntitiesConverter)
-                        .linkWith(vynlOntologyEntitiesConverter);
+                .linkWith(recordPlayerOntologyEntitiesConverter)
+                .linkWith(vynlOntologyEntitiesConverter);
         return tShirtOntologyEntitiesConverter;
+    }
+
+    private ProductDTO setQuantity(ProductDTO productDTO) {
+        Random r = new Random();
+        productDTO.setAvailableQuantity(r.nextInt(42));
+        return productDTO;
     }
 }
