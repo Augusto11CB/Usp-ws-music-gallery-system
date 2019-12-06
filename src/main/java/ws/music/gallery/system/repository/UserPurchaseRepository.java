@@ -23,5 +23,8 @@ public interface UserPurchaseRepository extends CrudRepository<UserPurchase, Lon
     @Query(value = "SELECT up FROM UserPurchase up WHERE up.user = ?1 ORDER BY up.purchaseDate")
     Optional<List<UserPurchase>> findTypesForRecommendation(User user, Pageable pageable);
 
+    @Query(value = "SELECT up FROM UserPurchase up WHERE up.user = ?1 ORDER BY up.purchaseDate")
+    Optional<List<UserPurchase>> findTypesForRecommendation(User user);
+
 
 }

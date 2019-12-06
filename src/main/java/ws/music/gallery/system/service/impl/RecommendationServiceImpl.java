@@ -1,8 +1,6 @@
 package ws.music.gallery.system.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import ws.music.gallery.system.domain.User;
 import ws.music.gallery.system.domain.UserPurchase;
@@ -15,10 +13,7 @@ import ws.music.gallery.system.repository.UserRepository;
 import ws.music.gallery.system.service.ProductService;
 import ws.music.gallery.system.service.RecommendationService;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 /*
  * Send stores that user already bought some thing
@@ -46,14 +41,36 @@ public class RecommendationServiceImpl implements RecommendationService {
         User user = userRepository.findByCpfUser(userCPF)
                 .orElseThrow(() -> new UserNotFoundException("User was not found."));
 
-        Pageable pageable = PageRequest.of(0, 3);
-        List<UserPurchase> userPurchases = userPurchaseRepository.findTypesForRecommendation(user, pageable)
+
+        List<UserPurchase> userPurchases = userPurchaseRepository.findTypesForRecommendation(user)
                 .orElseThrow(() -> new NothingToRecommendException("Sem recomendações"));
 
-        List<TypeProductAndBusiness> typesToLookingFor = userPurchases.stream().map(UserPurchase::getProductType).distinct().collect(Collectors.toList());
-        typesToLookingFor.forEach(type -> recommendations.addAll(productService.getProductsByType(type)));
+        userPurchases.forEach(System.out::println);
+        //List<TypeProductAndBusiness> typesToLookingFor = userPurchases.stream().map(UserPurchase::getProductType).distinct().collect(Collectors.toList());
+        Map<TypeProductAndBusiness, Long> recommendationsMap = userPurchases.stream()
+                .map(UserPurchase::getProductType)
+                .collect(Collectors.groupingBy(type -> type, Collectors.counting()));
 
-        return recommendations.stream().filter(reco -> Objects.nonNull(reco)).collect(Collectors.toList());
+        recommendationsMap.forEach((type, qtd) -> System.out.println(type + " " + qtd));
+
+        HashMap<TypeProductAndBusiness, Long> sortedRecoMap = recommendationsMap
+                .entrySet()
+                .stream()
+                .sorted(Comparator.comparing(Map.Entry::getValue))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (a, b) -> a, HashMap::new));
+
+        sortedRecoMap.forEach((a, b) -> System.out.println("a:" + a + "  b:" + b));
+
+
+        // typesToLookingFor.forEach(type -> recommendations.addAll(productService.getProductsByType(type)));
+        sortedRecoMap.entrySet()
+                .stream()
+                .limit(4)
+                .forEach(type -> recommendations.addAll(productService.getProductsByType(type.getKey())));
+
+        recommendations.forEach(System.out::println);
+
+        return recommendations.stream().filter(Objects::nonNull).collect(Collectors.toList());
     }
 
 }

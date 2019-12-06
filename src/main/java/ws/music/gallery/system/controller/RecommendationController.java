@@ -34,7 +34,6 @@ public class RecommendationController {
     @GetMapping("/get-recommended-products")
     public List<ProductDTO> getRecommendedProducts(@RequestParam(name = "userCPF", required = true) String userCPF) {
         return recommendationService.recommendProducsSameTypeLastPurchases(userCPF);
-        //return Arrays.asList(mockObject.mockProduct, mockObject.mockThirt1, mockObject.mockThirt2);
     }
 
 
