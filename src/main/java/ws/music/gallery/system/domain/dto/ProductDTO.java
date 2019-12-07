@@ -17,7 +17,7 @@ public class ProductDTO {
     private String brand;
     private double price;
     private StoreDTO soldByStore;
-    private int availableQuantity = 41;
+    private int availableQuantity;
     private String URI;
     //private int availableStock; // TODO Maybe create a extra table to controll stock and keep the db normalized
 }
