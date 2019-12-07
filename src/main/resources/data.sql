@@ -28,12 +28,10 @@ insert into product (id_user_purchase, available_quantity, product_url) values(1
 insert into product (id_user_purchase, available_quantity, product_url) values(20,100,'http://www.musicgallery/VitrolaPhillips');
 insert into product (id_user_purchase, available_quantity, product_url) values(21,100,'http://www.musicgallery/VitrolaRaveoOpera');
 insert into product (id_user_purchase, available_quantity, product_url) values(22,100,'http://www.musicgallery/VitrolaRaveoSonetto');
-insert into product (id_user_purchase, available_quantity, product_url) values(23,100,'http://www.musicgallery/VitrolaSuperboxUitech');
 insert into product (id_user_purchase, available_quantity, product_url) values(24,100,'http://www.musicgallery/VitrolaWoodburnTabaco');
 insert into product (id_user_purchase, available_quantity, product_url) values(25,100,'http://www.musicgallery/WhiteTshirt');
 insert into product (id_user_purchase, available_quantity, product_url) values(26,100,'http://www.musicgallery/YesTshirt');
 insert into product (id_user_purchase, available_quantity, product_url) values(27,100,'http://www.musicgallery/ZikaTshirt');
-insert into product (id_user_purchase, available_quantity, product_url) values(28,100,'http://www.musicgallery/BeeGeesTshirt');
 
 
 -- insert into MUSIC_GALLERY.user(id_user,age,cpf_user,gender,password)  values (1,22,'42734758694','MALE','123')

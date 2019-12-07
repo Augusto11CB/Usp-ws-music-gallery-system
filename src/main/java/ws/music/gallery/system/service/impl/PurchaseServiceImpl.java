@@ -3,11 +3,13 @@ package ws.music.gallery.system.service.impl;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ws.music.gallery.system.domain.Product;
 import ws.music.gallery.system.domain.User;
 import ws.music.gallery.system.domain.UserPurchase;
 import ws.music.gallery.system.domain.dto.ProductDTO;
 import ws.music.gallery.system.enums.Gender;
 import ws.music.gallery.system.exception.UserNotFoundException;
+import ws.music.gallery.system.repository.ProductRepository;
 import ws.music.gallery.system.repository.UserPurchaseRepository;
 import ws.music.gallery.system.repository.UserRepository;
 import ws.music.gallery.system.service.PurchaseService;
@@ -26,6 +28,9 @@ public class PurchaseServiceImpl implements PurchaseService {
     private UserPurchaseRepository userPurchaseRepository;
 
     @Autowired
+    private ProductRepository productRepository;
+
+    @Autowired
     ModelMapper modelMapper;
 
     @Override
@@ -33,13 +38,13 @@ public class PurchaseServiceImpl implements PurchaseService {
             throws UserNotFoundException {
 
         System.out.println(userRepository.findByCpfUser(cpf).isPresent());
-        if(!userRepository.findByCpfUser(cpf).isPresent()){
-            userRepository.save(getUser(cpf,gender,age));
+        if (!userRepository.findByCpfUser(cpf).isPresent()) {
+            userRepository.save(getUser(cpf, gender, age));
         }
         User user = userRepository.findByCpfUser(cpf).get();
 
         System.out.println(user);
-        purchasedProducts.forEach(productDTO -> this.persistPurchase(productDTO, user));
+        purchasedProducts.forEach(productDTO -> this.buyProductAndChangeQtd(productDTO, user));
     }
 
     private User getUser(String cpf, Gender gender, int age) {
@@ -64,5 +69,10 @@ public class PurchaseServiceImpl implements PurchaseService {
         userPurchaseRepository.save(purchase);
     }
 
-
+    private void buyProductAndChangeQtd(ProductDTO productDTO, User user) {
+        this.persistPurchase(productDTO, user);
+        Product product = productRepository.findByProductURI(productDTO.getURI()).get();
+        product.setAvailableQuantity(productDTO.getAvailableQuantity());
+        productRepository.save(product);
+    }
 }

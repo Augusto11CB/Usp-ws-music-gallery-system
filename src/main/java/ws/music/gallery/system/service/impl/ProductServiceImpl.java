@@ -19,7 +19,6 @@ import ws.music.gallery.system.service.ProductService;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 import java.util.stream.Collectors;
 
 
@@ -131,8 +130,9 @@ public class ProductServiceImpl implements ProductService {
     }
 
     private ProductDTO setQuantity(ProductDTO productDTO) {
-        Random r = new Random();
-        productDTO.setAvailableQuantity(r.nextInt(42));
+        productRepository.findByProductURI(productDTO.getURI())
+                .ifPresent(p -> productDTO.setAvailableQuantity(p.getAvailableQuantity()));
+
         return productDTO;
     }
 }
