@@ -2,10 +2,7 @@ package ws.music.gallery.system.controller;
 
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 import ws.music.gallery.system.domain.dto.BandTShirtDTO;
 import ws.music.gallery.system.domain.dto.ProductDTO;
@@ -36,9 +33,13 @@ public class ProductsController {
     @GetMapping("/get-all")
     public List<ProductDTO> getAllProducts() {
 
-
         return productService.getAllProducts();
         //return Arrays.asList(mockObject.mockProduct, mockObject.mockThirt1, mockObject.mockThirt2);
+    }
+
+    @GetMapping("/get/product")
+    public ProductDTO getProduct(@RequestParam(name = "productURI") String productURI) {
+        return productService.getProduct(productURI);
     }
 
     @ApiOperation(value = "Get product of a certain type", response = ProductDTO.class, responseContainer = "List", notes = "See Types Available")

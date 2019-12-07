@@ -3,11 +3,16 @@ package ws.music.gallery.system.service.impl;
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.impl.ResourceImpl;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import ws.music.gallery.system.converter.*;
+import ws.music.gallery.system.domain.Product;
 import ws.music.gallery.system.domain.dto.ProductDTO;
 import ws.music.gallery.system.enums.TypeProductAndBusiness;
+import ws.music.gallery.system.exception.ProductNotFoundException;
+import ws.music.gallery.system.repository.ProductRepository;
 import ws.music.gallery.system.repository.ontologyrepo.ProductOntologyRepository;
 import ws.music.gallery.system.repository.ontologyrepo.StoreOntologyRepository;
 import ws.music.gallery.system.service.ProductService;
@@ -24,6 +29,10 @@ public class ProductServiceImpl implements ProductService {
     @Value("${music.gallery.uri}")
     private String MUSIC_GALLERY_URI;
 
+    @Autowired
+    private ModelMapper modelMapper;
+
+    private ProductRepository productRepository;
     private StoreOntologyRepository storeOntologyRepository;
     private ProductOntologyRepository productOntologyRepository;
     private ProductOntologyEntitiesConverter productConverter;
@@ -34,6 +43,7 @@ public class ProductServiceImpl implements ProductService {
 
 
     public ProductServiceImpl(
+            ProductRepository productRepository,
             StoreOntologyRepository storeOntologyRepository,
             ProductOntologyRepository productOntologyRepository,
             VynlOntologyEntitiesConverter vynlOntologyEntitiesConverter,
@@ -42,6 +52,7 @@ public class ProductServiceImpl implements ProductService {
             RecordPlayerOntologyEntitiesConverter recordPlayerOntologyEntitiesConverter
 
     ) {
+        this.productRepository = productRepository;
         this.storeOntologyRepository = storeOntologyRepository;
         this.productOntologyRepository = productOntologyRepository;
         this.vynlOntologyEntitiesConverter = vynlOntologyEntitiesConverter;
@@ -51,6 +62,16 @@ public class ProductServiceImpl implements ProductService {
         this.productConverter = this.buildChainOfConversion();
 
         //TODO verify why we couldn't read values from applications.properties from the constructor
+    }
+
+    @Override
+    public ProductDTO getProduct(String productURI) {
+        Product product = productRepository.findByProductURI(productURI)
+                .orElseThrow(() -> new ProductNotFoundException("Product not found"));
+
+        ProductDTO productDTO = modelMapper.map(product, ProductDTO.class);
+
+        return productDTO;
     }
 
 
