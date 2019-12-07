@@ -1,10 +1,15 @@
 package ws.music.gallery.system.domain;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 
 @Entity
 @Table(name = "PRODUCT", schema = "MUSIC_GALLERY")
+@Data
+@NoArgsConstructor
 public class Product {
 
     @Id
