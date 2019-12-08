@@ -3,7 +3,7 @@
 
 
 
-CREATE SCHEMA  IF NOT EXISTS  MUSIC_GALLERY;
+-- CREATE SCHEMA  IF NOT EXISTS  MUSIC_GALLERY;
 
 
 insert into product (id_user_purchase, available_quantity, product_url) values(2,100,'http://www.musicgallery/ARevoltaDosDandis');
