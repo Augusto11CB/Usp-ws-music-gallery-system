@@ -60,6 +60,15 @@
     
 
 
+    <!-- http://www.musicgallery/productQuantity -->
+
+    <owl:ObjectProperty rdf:about="http://www.musicgallery/productQuantity">
+        <rdfs:domain rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <rdfs:range rdf:resource="http://www.musicgallery/Product"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.musicgallery/soldByStore -->
 
     <owl:ObjectProperty rdf:about="http://www.musicgallery/soldByStore">
@@ -232,6 +241,15 @@
     
 
 
+    <!-- http://www.musicgallery/quantity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.musicgallery/quantity">
+        <rdfs:domain rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.musicgallery/releaseYear -->
 
     <owl:DatatypeProperty rdf:about="http://www.musicgallery/releaseYear">
@@ -318,6 +336,12 @@
     <!-- http://www.musicgallery/Size -->
 
     <owl:Class rdf:about="http://www.musicgallery/Size"/>
+    
+
+
+    <!-- http://www.musicgallery/StockQuantity -->
+
+    <owl:Class rdf:about="http://www.musicgallery/StockQuantity"/>
     
 
 
@@ -434,6 +458,16 @@
     
 
 
+    <!-- http://www.musicgallery/BlackTShirtQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/BlackTShirtQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/BlackTshirt"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.musicgallery/BlackTshirt -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/BlackTshirt">
@@ -468,6 +502,16 @@
     
 
 
+    <!-- http://www.musicgallery/CloseToTheEdgeQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/CloseToTheEdgeQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/CloseToTheEdge"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.musicgallery/Clothing -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/Clothing">
@@ -496,6 +540,16 @@
     
 
 
+    <!-- http://www.musicgallery/ComfortableTShirtQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/ComfortableTShirtQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/ComfortableTShirt"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.musicgallery/ElectricGuitar -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/ElectricGuitar">
@@ -508,6 +562,16 @@
         <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Guitarra Eletrica Vintage</name>
         <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">3985.75</price>
         <typeOfInstrument rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corda</typeOfInstrument>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/ElectricGuitarQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/ElectricGuitarQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/ElectricGuitar"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
     </owl:NamedIndividual>
     
 
@@ -550,6 +614,16 @@
     
 
 
+    <!-- http://www.musicgallery/GIdleTshirtQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/GIdleTshirtQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/GIdleTshirt"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.musicgallery/Jarme -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/Jarme">
@@ -578,6 +652,16 @@
     
 
 
+    <!-- http://www.musicgallery/JoJoTshirtQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/JoJoTshirtQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/JoJoTshirt"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.musicgallery/KanaBoonTshirt -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/KanaBoonTshirt">
@@ -594,6 +678,16 @@
         <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camiseta KANA-BOON Raglan</name>
         <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">32.95</price>
         <typeOfFiber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algodao</typeOfFiber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/KanaBoonTshirtQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/KanaBoonTshirtQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/KanaBoonTshirt"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
     </owl:NamedIndividual>
     
 
@@ -615,6 +709,16 @@
     
 
 
+    <!-- http://www.musicgallery/KimetsuTshirtQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/KimetsuTshirtQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/KimetsuTshirt"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.musicgallery/KissLoveGun1997 -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/KissLoveGun1997">
@@ -627,6 +731,16 @@
         <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Album Kiss - Love Guns 1997</name>
         <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">459.3</price>
         <releaseYear rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1997</releaseYear>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/KissLoveGun1997Quantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/KissLoveGun1997Quantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/KissLoveGun1997"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
     </owl:NamedIndividual>
     
 
@@ -680,6 +794,16 @@
     
 
 
+    <!-- http://www.musicgallery/McIguTshirtQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/McIguTshirtQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/McIguTshirt"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.musicgallery/Medium -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/Medium">
@@ -724,6 +848,16 @@
     
 
 
+    <!-- http://www.musicgallery/OnePieceTshirtQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/OnePieceTshirtQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/OnePieceTshirt"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.musicgallery/PierreInstrumentosMusicais -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/PierreInstrumentosMusicais">
@@ -751,6 +885,15 @@
         <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camiseta Red Hot Chilli Peppers Rener</name>
         <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">120.95</price>
         <typeOfFiber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algodao</typeOfFiber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/RedHotTshirtQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/RedHotTshirtQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/RedHotTshirt"/>
     </owl:NamedIndividual>
     
 
@@ -790,6 +933,16 @@
     
 
 
+    <!-- http://www.musicgallery/SparkQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/SparkQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/Spark"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.musicgallery/Theremin -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/Theremin">
@@ -802,6 +955,16 @@
         <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Theremin Plus</name>
         <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">4900.0</price>
         <typeOfInstrument rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Campo elétrico</typeOfInstrument>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/ThereminQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/ThereminQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/Theremin"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
     </owl:NamedIndividual>
     
 
@@ -822,6 +985,16 @@
     
 
 
+    <!-- http://www.musicgallery/UprightPianoQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/UprightPianoQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/UprightPiano"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.musicgallery/Violin -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/Violin">
@@ -834,6 +1007,16 @@
         <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Violino Lai</name>
         <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">5500.0</price>
         <typeOfInstrument rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Corda</typeOfInstrument>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/ViolinQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/ViolinQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/Violin"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
     </owl:NamedIndividual>
     
 
@@ -856,6 +1039,16 @@
     
 
 
+    <!-- http://www.musicgallery/VitrolaPhillipsQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/VitrolaPhillipsQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/VitrolaPhillips"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.musicgallery/VitrolaRaveoOpera -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/VitrolaRaveoOpera">
@@ -869,6 +1062,16 @@
         <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vitrola com CD, K7, FM, USB e Bluetooth, Bivolt, Raveo, Ópera BT, 10</name>
         <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">1399.95</price>
         <voltage rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">220</voltage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/VitrolaRaveoOperaQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/VitrolaRaveoOperaQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/VitrolaRaveoOpera"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
     </owl:NamedIndividual>
     
 
@@ -891,6 +1094,16 @@
     
 
 
+    <!-- http://www.musicgallery/VitrolaRaveoSonettoQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/VitrolaRaveoSonettoQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/VitrolaRaveoSonetto"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">120</quantity>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.musicgallery/VitrolaSuperboxUitech -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/VitrolaSuperboxUitech">
@@ -904,6 +1117,16 @@
         <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Vitrola Toca Discos de Vinil BLuetooth Stadio e Fita Cassete CD MP3 FM com Conversor Digital Arena Aria Phoenix Ópera Tenor Superbox Uitech</name>
         <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">826.95</price>
         <voltage rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">220</voltage>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/VitrolaSuperboxUitechQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/VitrolaSuperboxUitechQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/VitrolaSuperboxUitech"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
     </owl:NamedIndividual>
     
 
@@ -925,6 +1148,16 @@
     
 
 
+    <!-- http://www.musicgallery/VitrolaWoodburnTabacoQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/VitrolaWoodburnTabacoQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/VitrolaWoodburnTabaco"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.musicgallery/WhiteTshirt -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/WhiteTshirt">
@@ -939,6 +1172,16 @@
         <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camiseta Branca</name>
         <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">39.95</price>
         <typeOfFiber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algodao</typeOfFiber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/WhiteTshirtQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/WhiteTshirtQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/WhiteTshirt"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
     </owl:NamedIndividual>
     
 
@@ -963,6 +1206,16 @@
     
 
 
+    <!-- http://www.musicgallery/YesTshirtQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/YesTshirtQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/YesTshirt"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://www.musicgallery/ZikaTshirt -->
 
     <owl:NamedIndividual rdf:about="http://www.musicgallery/ZikaTshirt">
@@ -977,6 +1230,16 @@
         <name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Camiseta Zika da Oakley</name>
         <price rdf:datatype="http://www.w3.org/2001/XMLSchema#double">79.95</price>
         <typeOfFiber rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Algodao</typeOfFiber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.musicgallery/ZikaTshirtQuantity -->
+
+    <owl:NamedIndividual rdf:about="http://www.musicgallery/ZikaTshirtQuantity">
+        <rdf:type rdf:resource="http://www.musicgallery/StockQuantity"/>
+        <productQuantity rdf:resource="http://www.musicgallery/ZikaTshirt"/>
+        <quantity rdf:datatype="http://www.w3.org/2001/XMLSchema#int">100</quantity>
     </owl:NamedIndividual>
 </rdf:RDF>
 
