@@ -13,4 +13,6 @@ public interface ProductOntologyRepository {
     public List<Resource> getAllProductsByType(Resource type);
 
     public List<Resource> getAllProductsOfStore(Resource store);
+
+    public void setStockQuantity(String URI, int quantity);
 }

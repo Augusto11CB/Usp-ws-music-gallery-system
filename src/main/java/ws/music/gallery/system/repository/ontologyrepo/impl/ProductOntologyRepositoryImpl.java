@@ -1,13 +1,16 @@
 package ws.music.gallery.system.repository.ontologyrepo.impl;
 
+import org.apache.jena.datatypes.xsd.XSDDatatype;
 import org.apache.jena.ontology.Individual;
 import org.apache.jena.ontology.OntModel;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.rdf.model.Statement;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 import ws.music.gallery.system.repository.ontologyrepo.MusicGalleryOntologyRepository;
 import ws.music.gallery.system.repository.ontologyrepo.ProductOntologyRepository;
+import ws.music.gallery.system.util.OntologyPropertyAndResourceUtils;
 
 import java.util.List;
 
@@ -52,6 +55,14 @@ public class ProductOntologyRepositoryImpl implements ProductOntologyRepository 
     public List<Resource> getAllProductsOfStore(Resource store) {
         this.soldByStoreProp = musicGalleryOntologyModel.createProperty(MUSIC_GALLERY_URI + "soldByStore");
         return musicGalleryOntologyRepository.getAllResourcesByProperty(soldByStoreProp, store);
+    }
+
+    @Override
+    public void setStockQuantity(String URI, int quantity) {
+        Resource product = musicGalleryOntologyModel.getResource(URI);
+        Statement setStockQuantity = product.getProperty(OntologyPropertyAndResourceUtils.productQuantity);
+        product.removeAll(OntologyPropertyAndResourceUtils.productQuantity);
+        product.addProperty(OntologyPropertyAndResourceUtils.productQuantity,String.valueOf(quantity), XSDDatatype.XSDunsignedInt);
     }
 
     /*

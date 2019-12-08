@@ -14,6 +14,9 @@ public class OntologyPropertyAndResourceUtils {
     public static Property brand = new PropertyImpl(MUSIC_GALLERY_URI + "brand");
     public static Property typeIs = new PropertyImpl(MUSIC_GALLERY_URI + "typeIs");
     public static Property soldByStore = new PropertyImpl(MUSIC_GALLERY_URI + "soldByStore");
+    public static Property boughtByUser = new PropertyImpl(MUSIC_GALLERY_URI + "boughtByUser");
+
+    public static Property productQuantity = new PropertyImpl(MUSIC_GALLERY_URI + "productQuantity");
 
     public static Property mainColor = new PropertyImpl(MUSIC_GALLERY_URI + "mainColor");
     public static Property size = new PropertyImpl(MUSIC_GALLERY_URI + "clothSize");
@@ -33,6 +36,8 @@ public class OntologyPropertyAndResourceUtils {
 
     public static Property typeOfInstrument = new PropertyImpl(MUSIC_GALLERY_URI + "typeOfInstrument");
     public static Property isSecondHand = new PropertyImpl(MUSIC_GALLERY_URI + "isSecondHand");
+
+    public static Property cpf = new PropertyImpl(MUSIC_GALLERY_URI + "cpf");
 
     public static String tshirtClass =  MUSIC_GALLERY_URI +  "TShirt";
     public static String bandTshirtClass =  MUSIC_GALLERY_URI +  "BandTShirt";

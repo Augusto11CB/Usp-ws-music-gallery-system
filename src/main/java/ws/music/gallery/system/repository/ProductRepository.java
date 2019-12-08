@@ -14,5 +14,7 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
 
     Optional<List<Product>> findByProductURI(List<String> productURIS);
 
+    void setStockQuantity(String URI, int quantity);
+
 
 }
